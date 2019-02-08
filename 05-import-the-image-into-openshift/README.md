@@ -24,7 +24,7 @@ To initialize an application in OpenShift, we can use the "oc new-app" command w
 
 The below command will reach out to the image in quay.io, inspect the image meta-data and then decide what to do. In our case it will do the following:
 - create a virtual image object (called an image stream) which enables OCP to track any changes in the image, even if the image is on an external platform like quay.io.
-- Create a deployment object (deployment config) which knows the speicifcation of the pod to be laucnhed and also knows how to manage the pod over the course of it's life (e.g. number of pods to run, updates, rollbacks etc) 
+- Create a deployment object (deployment config) which knows the specification of the pod to be launched and also knows how to manage the pod over the course of it's life (e.g. number of pods to run, updates, rollbacks etc) 
 - A service object is created.
 
 (Note that if you were able to create your own vote app image in your own quay.io account, you can use yours instead).
@@ -45,7 +45,7 @@ Check that the pod is being launched.
 oc get pod
 ```
 
-We will also mark the image to be refreshed periodially (--scheduled=true) so that any changes to the image in Quay.io will trigger an application refresh. 
+We will also mark the image to be refreshed periodically (--scheduled=true) so that any changes to the image in Quay.io will trigger an application refresh. 
 
 ```
 oc tag quay.io/sjbylo/flask-vote-app:latest vote-app:latest --scheduled=true
@@ -75,9 +75,9 @@ vote-app-1-xgl7c   1/1       Running   0          7m
 
 Once the pod is up (Running) and ready (1/1) you can try and access the application in the pod.
 
-But there is one problem.  By ydefault, the IP address of the pod is not reachable from networks outside the OCP cluster. To access the vote-app pod, we need to create a way to connect to it from an outside network.  To do this, we create a route object.  
+But there is one problem.  By default, the IP address of the pod is not reachable from networks outside the OCP cluster. To access the vote-app pod, we need to create a way to connect to it from an outside network.  To do this, we create a route object.  
 
-Create a route oibject with the following command.
+Create a route object with the following command.
 
 ```
 oc expose svc vote-app
