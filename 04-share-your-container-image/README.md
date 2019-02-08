@@ -1,6 +1,6 @@
 # Share your container image 
 
-*Note: This lab is optional.  If you encounter problems uploading your image, don't worry because the next labs can use another identical image which is already available* 
+**Note: This lab is optional.  If you encounter problems uploading your image, don't worry because the next labs can use another identical image which is already available**.
 
 To share your image you need to upload it to a *container registry*.  _docker.io_ is probably one you could use. 
 For these labs we will use _quay.io_ because it also has some very interesting features, e.g. automatic security vulnerability scanning of your images. 
