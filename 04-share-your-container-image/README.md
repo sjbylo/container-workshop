@@ -52,22 +52,32 @@ echo https://quay.io/repository/$MY_QUAY_USER/flask-vote-app?tab=settings
 
 Using the Quay.io web console, go to your new repository, select _Settings_, scroll down and set "Repository Visibility" to "Public".  You should then see "This Repository is currently public and is visible to all users, and may be pulled by all users.". 
 
-## Let Quay.io build the image for you and make it publicly available
+## Let Quay.io build the image for you and make it publicly available!
 
-Go to http://quay.io/ and see if you can find a way to have quay.io build the image for you by uploading our app's source code and starting a new build!   
+For Quay.io to build the image for you, you need to upload our app's source code and start a new build.
 
-First, you will need to archive the source code directory first, then upload it to Quay.io.
+First, you will need to archive the source code directory, then upload it to Quay.io.
 
 To create an archive, you could use this command.
 
 ```
-cd flask-vote-app # Ensure you your current working dir is our app's source code.
+cd flask-vote-app     # Ensure your current working directory is our app's source code.
 tar czvf ~/vote-app.tgz *
 ```
 
-Now create a new repository using the Quay web console.  Click on "+ Create New Repository" at https://quay.io/repository/ and fill in the form. Remember to set "Public" access and then, at the bottom, select and upload your archive file (~/vote-app.tgz).
+Now create a new repository using the Quay web console:
 
-Can you see the "Building image from Dockerfile" tab, showing you the steps taken as the image is built? 
+- Click on "+ Create New Repository" at https://quay.io/repository/ naming it "flask-vote-app" and 
+- fill in the form. 
+- Remember to set "Public" access 
+- "Initialize from a Dockerfile" and then, at the bottom,
+- select and upload your archive file (~/vote-app.tgz).
+
+The build should start.
+
+Can you see the "Building image from Dockerfile" (click on the build ID), showing you the steps taken as the image is built? 
+
+The image should then we made available.
 
 That's the end of the lab.  
 
