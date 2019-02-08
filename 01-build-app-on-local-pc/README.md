@@ -37,6 +37,6 @@ Open another terminal window and in that window test the app using curl.  Or, if
 curl http://localhost:8080/ 
 ```
 
-The curl command should output HTML which should contain "<title>Favourite Linux distribution</title>". 
+The curl command should output HTML which should contain "<title>Favorite Linux distribution</title>". 
 
 

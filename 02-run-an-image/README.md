@@ -30,7 +30,7 @@ You can also try running the following to get a command line prompt of the runni
 docker run -it --rm centos:7 bash
 ```
 
-Type the folowing to exit from the running container
+Type the following to exit from the running container
 
 ```
 exit

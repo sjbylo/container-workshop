@@ -28,15 +28,15 @@ cat Dockerfile
 
 Build the new image with the following command.
 This command will also tag (-t) the new image with the name _flask-vote-app:latest_.
-Don't forget the '.' which means build using the files in the current working firectory (our source code). 
+Don't forget the '.' which means build using the files in the current working directory (our source code). 
 
 ```
 docker build -t flask-vote-app:latest .
 ```
 
-This might take a few minitues. Once it's succesfully completed, then continue. 
+This might take a few minutes. Once it's successfully completed, then continue. 
 
-Launch your fresh image _flask-vote-app:latest_ with the folowing command. 
+Launch your fresh image _flask-vote-app:latest_ with the following command. 
 The command will make the container accessible on port 8080 (-p), name the container _vote-app_ and remove the container after it has stopped (--rm).   As in the previous lab, you should see the python application starting up and then listening on port 8080.
 
 ```
@@ -50,7 +50,7 @@ curl http://localhost:8080/
 ```
 
 The curl command should output HTML which should contain "<title>Favourite Linux distribution</title>". 
-If you don't have curl, open the URL in a broswer.
+If you don't have curl, open the URL in a browser.
 
 Kill your running container.
 
@@ -62,7 +62,7 @@ That's the end of the lab.
 
 Optionally, you might like to try ...
 
-Using the folowing command, explore inside your running container.
+Using the following command, explore inside your running container.
 
 ```
 docker exec -it vote-app /bin/bash
