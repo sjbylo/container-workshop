@@ -37,7 +37,7 @@ flask-vote-app                                    latest              a1e10cb408
 quay.io/sjbylo/flask-vote-app                     latest              a1e10cb408e6        19 hours ago        349 MB
 ```
 
-Notice that the image IDs (3rd collumn) are the same.  That's because we have created only one image but with two different tags. 
+Notice that the image IDs (3rd column) are the same.  That's because we have created only one image but with two different tags. 
 (Note instead of _sjbylo_ you should see your own username, of course!).
 
 Now, push (upload) the image to the quay.io container registry. 
@@ -54,30 +54,44 @@ Using the Quay.io web console, go to your new repository, select _Settings_, scr
 
 ## Let Quay.io build the image for you and make it publicly available!
 
-For Quay.io to build the image for you, you need to upload our app's source code and start a new build.
+For Quay.io to build the image for you, you need to upload our application's source code and ask Quay to start a new build.
 
 First, you will need to archive the source code directory, then upload it to Quay.io.
 
 To create an archive, you could use this command.
 
 ```
-cd flask-vote-app     # Ensure your current working directory is our app's source code.
+cd flask-vote-app     # Ensure your current working directory is our application's source code.
 tar czvf ~/vote-app.tgz *
 ```
 
 Now create a new repository using the Quay web console:
 
-- Click on "+ Create New Repository" at https://quay.io/repository/ naming it "flask-vote-app" and 
-- fill in the form. 
-- Remember to set "Public" access 
-- "Initialize from a Dockerfile" and then, at the bottom,
+- Go to https://quay.io/repository/
+- Click on "+ Create New Repository" and name it "flask-vote-app"
+- fill in the form, remember to set "Public" access 
+- set "Initialize from a Dockerfile" and then, at the bottom,
 - select and upload your archive file (~/vote-app.tgz).
+- Click on "Create public repository" 
 
 The build should start.
 
 Can you see the "Building image from Dockerfile" (click on the build ID), showing you the steps taken as the image is built? 
 
-The image should then we made available.
+The image should then be made available.
 
 That's the end of the lab.  
+
+Optionally, you might like to try ...
+
+Create a repository in Quay.io using a Git Hub repository as the source.  If you don't have a Git Hub account, create one and then fork the following repository (our source code).  Link this repository with quay.io.
+
+```
+https://github.com/sjbylo/flask-vote-app.git
+```
+
+To do this, go to Quay.io, create a new repository and link it to *your* forked repository in Git Hub. 
+
+
+
 
