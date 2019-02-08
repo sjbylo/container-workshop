@@ -83,7 +83,7 @@ Create a route object with the following command.
 oc expose svc vote-app
 ```
 
-This will create a _route_ object, which will in turn configure the OCP router (using haproxy) to pass incomming http based connections to our pod (or pods) running inside the OCP cluster. 
+This will create a _route_ object, which will in turn configure the OCP router (using haproxy) to pass incoming http based connections to our pod (or pods) running inside the OCP cluster. 
 
 Fetch the hostname of the route.
 

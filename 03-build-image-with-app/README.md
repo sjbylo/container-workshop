@@ -28,7 +28,7 @@ cat Dockerfile
 
 Build the new image with the following command.
 This command will also tag (-t) the new image with the name _flask-vote-app:latest_.
-Don't forget the '.' which means build using the files in the current working directory (our source code). 
+Don't forget the '.' ("build context") which means build using the files in the current working directory (our source code). 
 
 ```
 docker build -t flask-vote-app:latest .
