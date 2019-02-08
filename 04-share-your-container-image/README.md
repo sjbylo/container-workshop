@@ -80,7 +80,7 @@ Can you see the "Building image from Dockerfile" (click on the build ID), showin
 
 The image should then be made available.
 
-That's the end of the lab.  
+**That's the end of the lab.**
 
 Optionally, you might like to try ...
 

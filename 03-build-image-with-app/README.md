@@ -58,7 +58,7 @@ Kill your running container.
 docker kill vote-app 
 ```
 
-That's the end of the lab.  
+**That's the end of the lab.**
 
 Optionally, you might like to try ...
 
