@@ -1,6 +1,6 @@
-# Build an image with the app inside 
+# Build an image containing the application
 
-If you don't have the application source code already, fetch the source code from the following URL.
+If you don't have the application source code already, download the source code from the following URL.
 
 ```
 https://github.com/sjbylo/flask-vote-app/archive/master.zip
@@ -19,25 +19,31 @@ Change directory into the source code folder.
 cd flask-vote-app
 ```
 
-Examine the Dockerfile.  Look at each Dockerfile directive, e.g. RUN and COPY to see how they build a fresh image from the base image FROM centos.
+Examine the Dockerfile.
+Look at each Dockerfile directive, e.g. RUN and COPY etc, to see how a fresh image is built up, layer by layer, on top of the base image FROM centos.  Each directive creates one new layer in the docker image. 
 
 ```
 cat Dockerfile
 ```
 
-Build the new image with the following command which will also tag (-t) the new image with the name flask-vote-app:latest. Don't forget the '.' which means build using the current working firectory. 
+Build the new image with the following command.
+This command will also tag (-t) the new image with the name _flask-vote-app:latest_.
+Don't forget the '.' which means build using the files in the current working firectory (our source code). 
 
 ```
 docker build -t flask-vote-app:latest .
 ```
 
-Launch your fresh image, forward the port 8080, name the container "vote-app" and remove the container after it is stopped (--rm).   You should see the python application starting up and then listening. 
+This might take a few minitues. Once it's succesfully completed, then continue. 
+
+Launch your fresh image _flask-vote-app:latest_ with the folowing command. 
+The command will make the container accessible on port 8080 (-p), name the container _vote-app_ and remove the container after it has stopped (--rm).   As in the previous lab, you should see the python application starting up and then listening on port 8080.
 
 ```
 docker run -it --rm -p 8080:8080 --name=vote-app flask-vote-app:latest
 ```
 
-As in the previous labs, test your running container.
+As in the previous labs, test your app but this time it's running in a container.
 
 ```
 curl http://localhost:8080/
@@ -51,4 +57,16 @@ Kill your running container.
 ```
 docker kill vote-app 
 ```
+
+That's the end of the lab.  
+
+Optionally, you might like to try ...
+
+Using the folowing command, explore inside your running container.
+
+```
+docker exec -it vote-app /bin/bash
+```
+
+See if you can discover which Linux user the app/container is running as.  Which user ID is it and why? 
 
