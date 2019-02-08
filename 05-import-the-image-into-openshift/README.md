@@ -83,15 +83,21 @@ Create a route object with the following command.
 oc expose svc vote-app
 ```
 
-This will create a route object, which will in turn configure the OCP router (haproxy) to pass http based connections to our pod running on the internal software defined network (SDN is OpenVSwitch) inside the OCP cluster. 
+This will create a _route_ object, which will in turn configure the OCP router (using haproxy) to pass incomming http based connections to our pod (or pods) running inside the OCP cluster. 
 
-Fetch the name of the route.
+Fetch the hostname of the route.
 
 ```
 oc get route vote-app 
 ```
 
 You should see a route similar to "vote-app-myproject.192.168.99.100.nip.io".
+
+Fetch the route name into a variable
+
+```
+VOTE_APP_ROUTE=$(oc get route vote-app --template='{{.spec.host}}'); echo $VOTE_APP_ROUTE
+```
 
 Now try to access the pod through this route.
 
@@ -121,4 +127,15 @@ Test https is working using the default built-in self-signed certificate.
 curl -k https://vote-app-myproject.192.168.99.100.nip.io
 ```
 
-FIXME - should delete this after the lab?
+Remember to switch it back to http again by removing the tls configuration in the route object.
+
+```
+oc patch route vote-app --type json -p '[{ "op": "remove", "path":"/spec/tls"}]'
+```
+
+Http should work again.
+
+```
+curl vote-app-myproject.192.168.99.100.nip.io
+```
+
