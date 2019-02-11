@@ -22,9 +22,15 @@ You can check which projects you have access to with the following command:
 oc projects
 ```
 
-One of the main design points of OpenShift was to make it really easy to bring source code to the platform and have it running quickly. 
+One of the main design points of OpenShift was to make it really easy to bring source code to the platform and get it running quickly. 
 
 To create an application in OpenShift, we can use the "oc new-app" command which will look at what we provide it (the input), e.g. a container image pull spec and then set up all the OpenShift objects needed to run and manage the application. "oc new-app" can also automatically examine source code and get it running on OpenShift.
+
+Take a look at what this command can do:
+
+```
+oc new-app -h
+```
 
 The command we'll use below will reach out to quay.io, inspect the image meta-data and then decide what to do. In our case it will do the following:
 - create a virtual image object (called an image stream).  Image Streams enable OCP to track any changes in an image - even if the image is located an external registry like quay.io - and then trigger processes in OpenShift, e.g. re-build or deploy containers if base images change.
@@ -37,24 +43,20 @@ Now, we will launch the image.
 
 Run the following command to initialize the application and launch the container image.
 
+Use --dry-run first to check it is working but without executing anything:
+
+```
+oc new-app quay.io/sjbylo/flask-vote-app:latest --name vote-app --dry-run 
+```
+
+If all looks well, then execute the command: 
+
 ```
 oc new-app quay.io/sjbylo/flask-vote-app:latest --name vote-app 
 ```
 
-Check that the pod is being launched:
-
-```
-oc get pod
-```
-
-We will also mark the image to be refreshed periodically (--scheduled=true) so that any changes to the image in Quay.io will trigger an application refresh:
-
-```
-oc tag quay.io/sjbylo/flask-vote-app:latest vote-app:latest --scheduled=true
-```
-
-It can take a while to pull the image for the first time.   But, if you already have the centos image layers in OpenShift, then the dowload should be a lot faster. 
-After pulling the image from quay.io, the deployment config object will automatically launch the vote-app pod. 
+It can take a while to pull the image for the first time, especially if you are running OCP on your laptop and downloading over a shared Internet connection.   But, if you already have the centos image layers cached in OpenShift, then the download should be a lot faster. 
+After pulling the image from quay.io, the deployment config object will automatically launch it into a vote-app pod. 
 
 Check what's happening with the following command.
 
@@ -70,6 +72,7 @@ vote-app-1-xgl7c   1/1       Running   0          7m
 ```
 
 Once the pod is up ("Running") and ready ("1/1") you can try and access the application in the pod.
+
 
 But there is one problem.  By default, the IP address of the pod is not reachable from networks outside the OCP cluster. To access the vote-app pod, we need to create a way to connect to it from an outside network.  To do this, we create a route object.  
 
@@ -106,6 +109,16 @@ curl $VOTE_APP_ROUTE
 Again, you should see the HTML output containing "<title>Favourite Linux distribution</title>". 
 
 If you wish, try it out in a browser.  You should see a working voting app.
+
+Set automatic re-deployment if the source image is updated. 
+
+We will also mark the image stream object to be refreshed periodically (--scheduled=true) so that any changes to the image in Quay.io will trigger an application refresh:
+
+```
+oc tag quay.io/sjbylo/flask-vote-app:latest vote-app:latest --scheduled=true
+```
+
+After any changes are made to the image - e.g. you re-build the image on quay.io - the pod will be re-deployed in OpenShift (after a few minutes). 
 
 **That's the end of the lab.**
 
