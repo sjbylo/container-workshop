@@ -16,7 +16,7 @@ Run the following command to set up S2i for our application.  "oc new-app" is th
 oc new-app python:2.7~https://github.com/sjbylo/flask-vote-app.git --name vote
 ```
 
-This command will create a build object called a BuildConfiguration (BC).  The BC knows where to fetch the builder image and the source code from. The BC also knows the name of the final image and where to push it to, into the internal container registry. 
+This command will create a build object called a BuildConfiguration (BC).  The BuildConfiguration knows where to fetch the builder image and the source code from. The BuildConfiguration also knows the name of the final image which is pushed into the internal container registry. 
 
 You can view the build process in the console and also on the command line, like this:
 
@@ -26,7 +26,7 @@ oc logs bc/vote-app -f
 
 Note how the source code is first cloned, the dependencies are installed and then a new image is committed/pushed into the internal container registry. 
 
-After the build the image should be launched:
+After the build the image will be automatically launched:
 
 ```
 oc get po
@@ -38,10 +38,17 @@ vote-1-gxq5k   1/1       Running     0          10m
 The vote-1-build pod has completed that it was doing, namely building the application. 
 Now the vote-1-gxq5k pod is running the app.
 
+If not already, expose the app:
+
+```
+oc expose svc vote-app
+```
+
+Open the app in your browser and check it's working. 
 
 ## Update the source code and re-build the app
 
-Now you can update the code and trigger a re-build which will trigger a fresh deployment. 
+Now you can update the source code and manually trigger a re-build which will trigger a fresh deployment. 
 
 We will change the definition of the question for the vote.
 
@@ -50,13 +57,13 @@ Go to your source code on Github.  Find the file seeds/seed_data.json and edit i
 Append the text 'v2' to the line:
 
 ```
-"poll": "Favourite Linux distribution"
+   "question": "What is your favourite Linux distribution?",
 ```
 
 for example:
 
 ```
-"poll": "Favourite Linux distribution v2"
+   "question": "v2: What is your favourite Linux distribution?",
 ```
 
 and save the file by clicking on "Commit changes" button. 
@@ -83,9 +90,9 @@ VOTE_APP_ROUTE=$(oc get route vote-app --template='{{.spec.host}}'); echo $VOTE_
 curl $VOTE_APP_ROUTE
 ```
 
-Now you can rollback to the previous version of the app by simply re-deploying the previous image.
+Now you can roll back to the previous version of the app by simply re-deploying the previous image.
 
-Fist view the history of rollouts for our app:
+Fist view the history of roll outs for our app:
 
 ```
 oc rollout history dc vote-app
@@ -97,7 +104,7 @@ To roll back to the previous version, run the following:
 oc rollout undo dc vote-app
 ```
 
-or you can rollback to a specific revision:
+or you can roll back to a specific revision:
 
 ```
 oc rollout undo dc vote-app --to-revision=1
@@ -109,8 +116,10 @@ Check the result each time with the browser and the following command:
 oc get pods
 ```
 
+**That's the end of the lab.** 
 
-**That's the end of the lab**
+You learned how to build and deploy (and re-build and re-deploy) the app on top of OpenShift itself.  You also learned how to roll back to previous versions.
+
 
 If you want to try something else try to do all of the above tasks from within the OpenShift console. 
 
