@@ -136,21 +136,22 @@ Failing that, this can also be done on the command line with the following comma
 oc patch route vote-app -p '{"spec":{"tls":{"termination":"edge"}}}'
 ```
 
-Test https is working using the default built-in self-signed certificate. 
+Test https is working using the self-signed certificate that is built into OpenShift.
 
 ```
 curl -k https://vote-app-myproject.192.168.99.100.nip.io
 ```
 
-Remember to switch it back to http again by removing the tls configuration in the route object.
+Remember to switch back from https to http again by removing the tls configuration in the route object.
 
 ```
 oc patch route vote-app --type json -p '[{ "op": "remove", "path":"/spec/tls"}]'
 ```
 
-Http should work again.
+check that http is working again:
 
 ```
 curl vote-app-myproject.192.168.99.100.nip.io
 ```
+
 

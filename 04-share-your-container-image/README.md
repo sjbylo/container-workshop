@@ -13,6 +13,12 @@ Log into Quay.io.   First set your username in a variable for later use.
 MY_QUAY_USER=<add your quay username here>
 ```
 
+Just to to sure, this command should output your username:
+
+```
+echo $MY_QUAY_USER
+```
+
 Now, log in. 
 
 ```
