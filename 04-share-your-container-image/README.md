@@ -1,5 +1,7 @@
 # Share your container image 
 
+In this lab....  FIXME
+
 **Note: If you encounter problems uploading your image due to network connectivity issues, don't worry because the next labs can use another identical image which is already available**.
 
 To share your image you need to upload it to a *container registry*.  _Docker.io_ is probably one you could use. 

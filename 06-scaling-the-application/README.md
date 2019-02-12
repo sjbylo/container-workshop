@@ -1,10 +1,6 @@
-# Add probes 
-
-Use the following command to add a liveness probe to the deployment "dc vote-app". The probe will check if the vote.html page returns 200 or not and also within 2 seconds.  The probe will only start after an initial delay of 3 seconds, giving the application in the pod a chance to start up properly. 
-
-oc set probe dc vote-app --liveness --get-url=http://:8080/vote.html --timeout-seconds=2 --initial-delay-seconds=3
-
 # Scale up and Scale down the application instances
+
+In this lab....  FIXME
 
 In this exercise we will learn how to scale our application. OpenShift
 has the capability to scale your application and make sure that many
@@ -62,7 +58,7 @@ specify the `dc`)
 
 ```
 oc scale --replicas=3 dc/vote-app
-deploymentconfig "vote-app" scaled
+DeploymentConfig "vote-app" scaled
 ```
 
 If you look at the web console and you will see that there are 3 instances running now
@@ -116,7 +112,7 @@ Marked service myproject/vote-app to unidle resource DeploymentConfig myproject/
 Idled DeploymentConfig myproject/vote-app (dry run)
 ```
 
-Go back to the webconsole. You will notice that the pods show up as idled.
+Go back to the web console. You will notice that the pods show up as idled.
 
 FIXME
 image::images/idled_pods.jpeg[image]
@@ -144,7 +140,7 @@ Scaling down is the same procedure as scaling up. Use the `oc scale` command on 
 ```
 oc scale --replicas=1 dc/vote-app
 
-deploymentconfig "vote-app" scaled
+DeploymentConfig "vote-app" scaled
 ```
 
 Alternately, you can go to project overview page and click on the down arrow twice to remove 2 running pods.

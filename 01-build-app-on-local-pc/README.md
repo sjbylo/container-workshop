@@ -1,7 +1,10 @@
 # Build & test the application locally on your laptop  
 
-This part of the labs is optional.  If you have python, pip and git installed on your laptop, you can complete this part. 
-To run the app on your laptop, first download the source code from Git Hub. You can download the source code from the command line like this.
+In this lab you will download the source code of our workshop application and get it running on your laptop. 
+
+If you have python, pip and git installed on your laptop, you can complete this part. 
+To run the app on your laptop, first download the source code from Git Hub. You can
+download the source code from the command line like this.
 
 ```
 git clone https://github.com/sjbylo/flask-vote-app.git
@@ -31,12 +34,11 @@ python app.py
 
 You should see the python application starting up and then listening. 
 
-Open another terminal window and in that window test the app using curl.  Or, if you don't have curl, use a normal browser.
+Open another terminal window and in that window test the app using curl.  Or, if you don't have curl, use a normal browser and try out the application. 
 
 ```
 curl http://localhost:8080/ 
 ```
 
 The curl command should output HTML which should contain "<title>Favorite Linux distribution</title>". 
-
 

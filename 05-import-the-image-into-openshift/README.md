@@ -35,7 +35,7 @@ oc new-app -h
 The command we'll use below will reach out to quay.io, inspect the image meta-data and then decide what to do. In our case it will do the following:
 - create a virtual image object (called an image stream).  Image Streams enable OCP to track any changes in an image - even if the image is located an external registry like quay.io - and then trigger processes in OpenShift, e.g. re-build or deploy containers if base images change.
 - Create a deployment object (deployment config).  Deployment Configuration objects knows the specification of a pod to be launched and also knows how to manage the pod over the course of its life (e.g. number of pods to run, how to update, rollbacks etc) 
-- A service object is created.  The service object acts like an internal load balancer for a set of identicle pods. 
+- A service object is created.  The service object acts like an internal load balancer for a set of identical pods. 
 
 (Note that if you were able to create your own vote app image in your own quay.io account, you can use yours instead).
 
@@ -116,6 +116,7 @@ We will also mark the image stream object to be refreshed periodically (--schedu
 
 ```
 oc tag quay.io/sjbylo/flask-vote-app:latest vote-app:latest --scheduled=true
+Tag vote-app:latest set to import quay.io/sjbylo/flask-vote-app:latest periodically
 ```
 
 After any changes are made to the image - e.g. you re-build the image on quay.io - the pod will be re-deployed in OpenShift (after a few minutes). 
