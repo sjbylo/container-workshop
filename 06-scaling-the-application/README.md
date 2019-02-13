@@ -112,10 +112,7 @@ Marked service myproject/vote-app to unidle resource DeploymentConfig myproject/
 Idled DeploymentConfig myproject/vote-app (dry run)
 ```
 
-Go back to the web console. You will notice that the pods show up as idled.
-
-FIXME
-image::images/idled_pods.jpeg[image]
+Go back to the web console. You will notice that the pods show up as "idled".
 
 At this point the application is idled, the pods are not running and no
 resources are being used by the application. This doesn’t mean that the
@@ -142,6 +139,8 @@ oc scale --replicas=1 dc/vote-app
 
 DeploymentConfig "vote-app" scaled
 ```
+
+This will also have the effect of unidling the pods.
 
 Alternately, you can go to project overview page and click on the down arrow twice to remove 2 running pods.
 

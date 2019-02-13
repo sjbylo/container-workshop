@@ -2,7 +2,7 @@
 
 In this lab you will enable OpenShift to build our application directly on OpenShift itself. This is done using Source 2 Image (s2i) which does the following:
 
-1 Launches a container from a "builder image" of the matching runtime.  In this case that's python version 2.7 builder image.
+1 Launches a container from a "builder image" of the matching runtime.  In this case that's a python version 2.7 builder image.
 1 Executes a build of the application in the running builder container.  After a successful build, commits a new image containing the application. 
 1 The image is pushed into the registry which internal to OpenShift. 
 1 The container is launched since the DeploymentConfig is configured to launch or re-launch the container if the image is added or updated. 
@@ -13,7 +13,7 @@ This command will use the a builder image (python:2.7) and run S2i against the s
 Run the following command to set up S2i for our application.  "oc new-app" is the command that can initialize an application on OCP. 
 
 ```
-oc new-app python:2.7~https://github.com/sjbylo/flask-vote-app.git --name vote
+oc new-app python:2.7~https://github.com/sjbylo/flask-vote-app.git --name vote-app
 ```
 
 This command will create a build object called a BuildConfiguration (BC).  The BuildConfiguration knows where to fetch the builder image and the source code from. The BuildConfiguration also knows the name of the final image which is pushed into the internal container registry. 
@@ -31,12 +31,12 @@ After the build the image will be automatically launched:
 ```
 oc get po
 NAME           READY     STATUS      RESTARTS   AGE
-vote-1-build   0/1       Completed   0          10m
-vote-1-gxq5k   1/1       Running     0          10m
+vote-app-1-build   0/1       Completed   0          10m
+vote-app-1-gxq5k   1/1       Running     0          10m
 ```
 
-The vote-1-build pod has completed that it was doing, namely building the application. 
-Now the vote-1-gxq5k pod is running the app.
+The vote-app-1-build pod has completed that it was doing, namely building the application. 
+Now the vote-app-1-gxq5k pod is running the app.
 
 If not already, expose the app:
 
@@ -50,7 +50,7 @@ Open the app in your browser and check it's working.
 
 Now you can update the source code and manually trigger a re-build which will trigger a fresh deployment. 
 
-We will change the definition of the question for the vote.
+We will change the definition of the question for the vote-app.
 
 Go to your source code on Github.  Find the file seeds/seed_data.json and edit it (click on the pen icon).
 
@@ -92,7 +92,7 @@ curl $VOTE_APP_ROUTE
 
 Now you can roll back to the previous version of the app by simply re-deploying the previous image.
 
-Fist view the history of roll outs for our app:
+Fist view the history of rollouts for our app:
 
 ```
 oc rollout history dc vote-app
@@ -110,7 +110,7 @@ or you can roll back to a specific revision:
 oc rollout undo dc vote-app --to-revision=1
 ```
 
-Check the result each time with the browser and the following command:
+Check which version of the app is actually running each time with the browser and with the following command:
 
 ```
 oc get pods
