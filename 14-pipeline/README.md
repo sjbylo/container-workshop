@@ -59,6 +59,37 @@ You can also trigger the Pipeline from the command line, of course:
 oc start-build vote-app-pipeline --follow --wait 
 ```
 
+FIXME
+
+oc export dc vote-app | sed "s/vote-app/vote-app-prod/g" | oc create -f -
+OR
+oc get --export dc vote-app -o yaml | sed "s/vote-app/vote-app-prod/g" | oc create -f -
+
+Launch new prod version:
+
+```
+oc run vote-app-prod --image=docker-registry.default.svc:5000/$(oc project -q)/vote-app
+```
+
+FIXME
+
+promote like this
+
+oc tag vote-app:latest vote-app:prod
+oc new-app --image-stream=vote-app:prod  --name vote-app-prod
+
+Expose
+
+```
+oc expose svc vote-app-prod
+```
+
+
+Try the piepline, 
+code change
+run pipeline, check dev version, promote
+check prod version
+
 
 **That's the end of the lab**
 
