@@ -131,7 +131,8 @@ The image should then be made available.
 
 As described above, make the image "public" so others can access it. 
 
-## Allow others to run your container
+---
+## Allow others to pull & run your container
 
 Finally, we can check if others can "pull" and run your image from the following repository:
 

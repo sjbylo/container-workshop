@@ -2,10 +2,11 @@
 
 In this lab you will launch a container image into a pod (Kubernetes container) on OpenShift and then access it via an endpoint.
 
-*NOTE: It should be possible to run these labs on Minishift.  Minishift is a OpenShift, running on your laptop. You can try to use 
-Minishift if it is working properly.  However, it is recommended to follow these labs using the online OpenShift environment.*
+*NOTE: It should be possible to run these labs on Minishift.  Minishift is OpenShift running on your laptop. You can try to use 
+Minishift if it is working properly.  However, it is recommended to follow these labs using the
+online OpenShift environment if one is provided for you.*
 
-You *cannot* start this lap without access to OpenShift.  Wait for your instructor to show you how to access it before you continue.
+You *cannot* start this lab without access to OpenShift.  Wait for your instructor to show you how to access it before you continue.
 
 After you have the access credentials (host, username and password), access the environment and ensure you are logged into OpenShift. 
 
@@ -19,11 +20,14 @@ You should see your username.
 If you are not logged in to OpenShift properly, use the following:
 
 ```
-oc login -u YOUR_USERNAME
+oc login -u YOUR_USERNAME https://master.openshift.example.com/
 <enter your password>
 ```
+(Your instructor, if available, will provide you with the OpenShift URL.).
 
-First of all, before you can do anything with OpenShift, you need to create a project.  A project is a place in OpenShift where you can work and launch your containers without disturbing other users working in their own projects. 
+First of all, before you can do anything with OpenShift, you need to create a project.  
+A project is a place in OpenShift where you can work and launch your containers without disturbing other 
+users working in their own projects. 
 
 Be sure to choose a cluster wide unique name for your project!
 
@@ -43,10 +47,10 @@ You can check which projects you have access to with the following command:
 oc projects
 ```
 
-One of the main design points of OpenShift was to make it really easy to bring source code to the platform and get it running quickly. 
+One of the main design points of OpenShift was to make it really easy to bring source code to the platform and get it running. 
 
 To create an application in OpenShift, we can use the "oc new-app" command which will look at what we provide it (the input), e.g. 
-a container image and then set up all the OpenShift objects needed to run and manage the application. "oc new-app" 
+a container image, and then set up all the OpenShift objects needed to run and manage the application. "oc new-app" 
 can also automatically examine source code and get it running on OpenShift.  For now, we will not do that.
 
 Take a look at what this command can do:
@@ -56,7 +60,9 @@ oc new-app -h
 ```
 
 The command we'll use below will reach out to quay.io, inspect the image meta-data and then decide what to do. In our case it will do the following:
-- create a virtual image object (called an image stream).  Image Streams enable OpenShift to track any changes in an image - even if the image is located an external registry like quay.io - and then trigger processes in OpenShift, e.g. re-build or deploy containers if base images change.
+- create a virtual image object (called an ImageStream).  ImageStreams enable OpenShift to track any changes in an image - 
+even if the image is located on an external registry like quay.io - and then trigger processes in 
+OpenShift, e.g. re-build or deploy containers if base images change.
 - Create a deployment object (deployment config).  Deployment Configuration objects knows the specification of a pod to be launched and also knows how to manage the pod over the course of its life (e.g. number of pods to run, how to update, rollbacks etc) 
 - A service object is created.  The service object acts like an internal load balancer for a set of identical pods. 
 
