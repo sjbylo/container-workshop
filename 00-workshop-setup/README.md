@@ -24,22 +24,22 @@ Loaded image: mysql:5.7.15
 ```
 
 
-# Fork the example application repository in Github
+# Fork the example application repository in GitHub
 
 First you need to fork the example application repository.  
-Log into your own Github account (or create one), then go to the example repository located here:
+Log into your own GitHub account (or create one), then go to the example repository located here:
 
 ```
 https://github.com/sjbylo/flask-vote-app 
 ```
 
-Notice that the example application belongs to Github user "sjbylo".  Because you will be required to make changes to the source code, 
+Notice that the example application belongs to GitHub user "sjbylo".  Because you will be required to make changes to the source code, 
 it is important you *do not* use this repository directly, but that you _fork_ (copy) it and work with your own copy.
 
 Click on the "Fork" button.
 
-Github will make a copy and you will see your own version of it in your own Github account.
-Check that the URL now contains your Github username and no longer "sjbylo"!
+GitHub will make a copy and you will see your own version of it in your own GitHub account.
+Check that the URL now contains your GitHub username and no longer "sjbylo"!
 Later on in the labs you will be asked to access your repository.  
 To help you get the URL, click on the 'Clone or download" button and copy & paste the URL into your terminal when ask to.
 

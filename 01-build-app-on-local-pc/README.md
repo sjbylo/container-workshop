@@ -11,7 +11,7 @@ might face.   Later on we will see how Docker solves a lot of these problems by 
 and sharing our application in container images! 
 
 If you have python, pip and git installed on your laptop you can complete this lab. 
-To run the application on your laptop, first download the source code from Github. You can
+To run the application on your laptop, first download the source code from GitHub. You can
 download the source code from the command line like this or use whatever git software you are used to.
 
 ```

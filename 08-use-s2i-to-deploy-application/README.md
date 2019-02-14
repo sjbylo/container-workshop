@@ -9,7 +9,7 @@ which does the following:
 1 The container is launched since the DeploymentConfig is configured to launch or re-launch the container if the image is added or updated. 
 
 "oc new-app" is the command that can initialize an application on OpenShift. 
-This command will use the builder image (python:2.7) and run s2i against the source code, fetched from Github. 
+This command will use the builder image (python:2.7) and run s2i against the source code, fetched from GitHub. 
 
 Run the following command to set up s2i for our application.  "oc new-app" is the command that can initialize an application on OpenShift. 
 
@@ -58,7 +58,7 @@ Now you can update the source code and manually trigger a re-build which will al
 
 We will change the definition of the question for the vote-app.
 
-Go to your source code on Github.  Find the file seeds/seed_data.json and edit it (click on the pen icon).
+Go to your source code on GitHub.  Find the file seeds/seed_data.json and edit it (click on the pen icon).
 
 Append the text 'v2' to the line:
 

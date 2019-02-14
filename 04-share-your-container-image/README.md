@@ -52,7 +52,13 @@ quay.io/YOUR_GITHUB_USERNAME/flask-vote-app       latest              a1e10cb408
 ```
 
 Notice that the image IDs (3rd column) are the same.  That's because we have created only one image but with two different tags. 
-(Note instead of _YOUR_GITHUB_USERNAME_ you should see your own username, of course!).
+(Note, instead of _YOUR_GITHUB_USERNAME_ you should see your own username, of course!).
+
+---
+## Push the image into the registry
+
+Warning: This step might be difficult, especially if you are doing it over a shared network.  If this does not work, don't worry,
+bellow is a way to build the image directly on the Quay servers. 
 
 Now, push (upload) the image to the quay.io container registry. 
 
@@ -60,35 +66,50 @@ Now, push (upload) the image to the quay.io container registry.
 docker push quay.io/$MY_QUAY_USER/flask-vote-app:latest
 ```
 
-Now, you need to make the image "public". 
+By default, the images on Quay are private.  Now, you need to make the image "public". 
 
-open the Quay.io web console in a browser and log in. The following command will help you know which URL to open.
+Open the Quay.io web console in a browser and log in. The following command will help you know which URL to open.
 
+```
 echo https://quay.io/repository/$MY_QUAY_USER/flask-vote-app?tab=settings
+```
 
-Using the Quay.io web console, go to your new repository, select _Settings_, scroll down and set "Repository Visibility" to "Public".  You should then see "This Repository is currently public and is visible to all users, and may be pulled by all users.". 
+Using the Quay.io web console:
+1 go to your new repository
+1 select _Settings_
+1 scroll down and set "Repository Visibility" to "Public". 
 
+You should then see "_This Repository is currently public and is visible to all users, and may be
+pulled by all users._". 
+
+
+---
 ## Let Quay.io build the image for you and make it publicly available!
 
 For Quay.io to build the image for you, you need to upload our application's source code and ask Quay to start a new build.
 
 First, you will need to archive the source code directory, then upload the archive file to Quay.io.
 
+First, it is important your current working directory is our application's source code.
+
+```
+cd flask-vote-app
+```
+
 To create an archive, you could use this command:
 
 ```
-cd flask-vote-app     # Ensure your current working directory is our application's source code.
 tar czvf ~/vote-app.tgz *
 ```
 
 Now create a new repository using the Quay web console:
 
-- Go to https://quay.io/repository/
-- Click on "+ Create New Repository" and name it "flask-vote-app"
-- fill in the form, remember to set "Public" access 
-- set "Initialize from a Dockerfile" and then, at the bottom,
-- select and upload your archive file (~/vote-app.tgz).
-- Click on "Create public repository" 
+1 Go to https://quay.io/repository/
+1 Click on "+ Create New Repository" and name it "flask-vote-app"
+1 fill in the form, remember to set "Public" access 
+1 set "Initialize from a Dockerfile" and then, at the bottom,
+1 select and upload your archive file (~/vote-app.tgz).
+1 Click on "Create public repository" 
 
 The build should start.
 
@@ -103,12 +124,13 @@ As described above, make the image "public" so others can access it.
 ---
 Optionally, you might like to try ...
 
-Create a repository in Quay.io using a Git Hub repository as the source.  If you don't have a Git Hub account, create one and then fork the following repository (our source code).  Link this repository with quay.io.
+Create a repository in Quay.io using a GitHub repository URL as the source.  If you don't have a GitHub account, 
+create one and then fork the following repository (our source code).  Link this repository with quay.io.
 
 ```
-https://github.com/sjbylo/flask-vote-app.git
+https://github.com/YOUR_GITHUB_USERNAME/flask-vote-app.git
 ```
 
-To do this, go to Quay.io, create a new repository and link it to *your* forked repository in Git Hub. 
+To do this, go to Quay.io, create a new repository and link it to *your* forked repository in GitHub. 
 
 

@@ -61,7 +61,7 @@ Let's try out the new pipeline.
 Now try the following to show how the pipeline works including a manual step to promote (and deploy) to production:
 
 - change a part of the source code and commit the change to your repository.  How about you edit the file templates/index.html and change the text "Sample Poll Application" to "Sample Poll Application v2" (or similar).  
-You can do this using git on the command line or by using the Github console by navigating to the file you want to change, clicking on the edit (pencil) icon, make the change  and then click on the "Commit" button.
+You can do this using git on the command line or by using the GitHub console by navigating to the file you want to change, clicking on the edit (pencil) icon, make the change  and then click on the "Commit" button.
 - Start the Pipeline and let it run until you are asked to promote or not.
 - Check the version of the application that is running (not the production version).  It should include the change you just made ("v2").
 - Check the version of the application that is running in production.  It should still be running the latest stable version (without the "v2").
