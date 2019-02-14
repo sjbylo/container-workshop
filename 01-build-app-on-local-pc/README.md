@@ -73,6 +73,7 @@ The curl command should output HTML containing "<title>Favorite Linux distributi
 Close the extra terminal window and quit the application using CTRL+C.
 
 **The is the end of the lab**
+---
 
 If you are interested, you can test the application using curl.
 
@@ -90,5 +91,7 @@ To view the results use the following command. You should see the totals of all 
 
 ```
 curl -s http://localhost:8080/results.html | grep "data: \["
+  data: [ "3",  "3",  "2",  "0",  "1",  "5",  "1",  "3",  "2", ],
+
 ```
 
