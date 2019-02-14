@@ -101,9 +101,10 @@ To do this, go to Quay.io, create a new repository and link it to *your* forked 
 Now create a new repository using the Quay web console:
 
 1. Go to https://quay.io/repository/
-1. Click on "+ Create New Repository" and name it "flask-vote-app"
-1. fill in the form, remember to set "Public" access 
-1. choose "Link to a GitHub Repository Push"
+1. Click on "+ Create New Repository" and name it "flask-vote-app" (or a different name if this
+already exists).
+1. Fill in the form, remember to set "Public" access 
+1. Choose "Link to a GitHub Repository Push"
 1. Click on "Create public repository" 
     1. Note "You will be redirected to authorize for GitHub Repository Push once the repository has
 been created"
