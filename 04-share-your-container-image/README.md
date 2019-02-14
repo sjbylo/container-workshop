@@ -27,11 +27,11 @@ Just to to sure, this command should output your username:
 echo $MY_QUAY_USER
 ```
 
-Now, log in to Quay:
+Now, log into Quay:
 
 ```
-docker login -u $MY_QUAY_USER
-<enter your password or key>
+docker login -u $MY_QUAY_USER quay.io
+<enter your quay password or key>
 Login Succeeded
 ```
 
