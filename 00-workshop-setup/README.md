@@ -15,7 +15,12 @@ which you can copy onto your laptop and then load into Docker as follows:
 
 ```
 docker load -i centos7.saved
+Loaded image: centos:7
+```
+
+```
 docker load -i mysql57.saved
+Loaded image: mysql:5.7.15
 ```
 
 
