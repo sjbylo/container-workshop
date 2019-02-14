@@ -75,9 +75,9 @@ echo https://quay.io/repository/$MY_QUAY_USER/flask-vote-app?tab=settings
 ```
 
 Using the Quay.io web console:
-1 go to your new repository
-1 select _Settings_
-1 scroll down and set "Repository Visibility" to "Public". 
+1. go to your new repository
+1. select _Settings_
+1. scroll down and set "Repository Visibility" to "Public". 
 
 You should then see "_This Repository is currently public and is visible to all users, and may be
 pulled by all users._". 
