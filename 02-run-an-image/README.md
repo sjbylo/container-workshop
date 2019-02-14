@@ -14,7 +14,7 @@ If you see an error message like the following, you need to install & start Dock
 docker: Cannot connect to the Docker daemon ... Is the docker daemon running?
 ```
 
-The following command will launch the centos 7 image,  and run the echo command.
+The following command will launch the centos 7 image as a running container and then run the "echo" command which simply output some text and then exit. 
 
 ```
 docker run --rm centos:7 echo "Hello World"
@@ -27,7 +27,7 @@ Hello World
 ```
 
 You can also try running the following command which will connect the current terminal (-it) with the running container.
-You will see a command line prompt running "inside" the container:
+You will see a command line prompt ("#") running "inside" the container:
 
 ```
 docker run -it --rm centos:7 bash
@@ -42,18 +42,21 @@ df /
 ```
 
 Note that you are logged in as root.  You should have quite a lot of root privileges within the container, but only within the container. Nevertheless it is not a best practice to run containers with the root privilege and this is something that is not allowed by default in OpenShift. 
-If you could somehow use your root privileges _outside of the container_ on the underlying host (your laptop or other machine) then that might be a huge problem.  That is why the underlying container technology that is running in the host Linux OS must be secure. 
+If you could somehow use your root privileges _outside of the container_ (escape the container) on the underlying host (your laptop or 
+other machine) then that might pose a huge problem.  That is why the underlying container technology that is 
+running in the host Linux OS must be secure. 
 
+Yes!  Your container is running on Linux, even though you are running Docker on Windows or on a mac laptop.
 
-That's the end of the lab.
+**That's the end of the lab.**
 
-Something you might like to try...
+Something you might like to try if you have time ...
 
 Let's try and show what a container, running as root, could do if the container might be misconfigured by mistake.
 
 We will mount the host's root filesystem into the container and write a file to it.
 
-Run the following command to mound the filesystem (-v /:/rootfs).  
+Run the following command to mound the host (yes, your laptop!) system filesystem under /rootfs (-v /:/rootfs).  
 
 ```
 docker run -it --rm -v /:/rootfs centos:7
@@ -72,7 +75,6 @@ Now, create a file on the host's root filesystem but from the running container.
 touch /rootfs/tmp/createdbycontainer
 ```
 
-
 Type the following to exit from the running container:
 
 ```
@@ -80,4 +82,5 @@ exit
 ```
 
 You can read more about this at this blog post: http://blog.dscpl.com.au/2015/12/don-run-as-root-inside-of-docker.html 
+
 

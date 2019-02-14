@@ -1,19 +1,13 @@
-# Build an image containing the application
+# Build a container image containing the example application
 
-In this lab you will build the application using Docker. You will take a look at the Dockerfile which contains all the instructions needs to build our application and then you will run the application in a container. 
+In this lab you will build a container image for the application using Docker. You will take a look at the Dockerfile which contains 
+all the instructions needed to build the application and then you will run the application in a container. 
 
 First, if you don't have the application source code already on your laptop (from previous lab),
-download the source code zip file from the following URL.
+clone the source code following URL.
 
 ```
-https://github.com/sjbylo/flask-vote-app/archive/master.zip
-```
-
-Unpack the archive into the current directory and rename it:
-
-```
-unzip  flask-vote-app-master.zip
-mv flask-vote-app-master flask-vote-app
+FIXME
 ```
 
 Change directory into the source code folder:
@@ -39,16 +33,17 @@ Don't forget the '.' ("build context") which means build using the files in the 
 docker build -t flask-vote-app:latest .
 ```
 
-This might take a few minutes. Once it's successfully completed, then continue with the lab.
+This might take a few minutes. Once it's successfully completed continue with the lab.
 
-Launch your fresh image _flask-vote-app:latest_ with the following command. 
+Launch your fresh image named _flask-vote-app:latest_ with the following command. 
+
 The command will make the container accessible on port 8080 (-p), name the container _vote-app_ and remove the container after it has stopped (--rm).   You should see the python application starting up and then listening on port 8080.
 
 ```
 docker run -it --rm -p 8080:8080 --name=vote-app flask-vote-app:latest
 ```
 
-As in the previous labs, test your app but this time it's running in a container.
+As in the previous labs, test your app - but this time it's running in a container.
 
 ```
 curl http://localhost:8080/
@@ -57,7 +52,7 @@ curl http://localhost:8080/
 The curl command should output HTML which should contain "<title>Favourite Linux distribution</title>". 
 If you don't have curl, open the URL in a browser.
 
-Kill your running container.
+Stop your running container.
 
 ```
 docker kill vote-app 

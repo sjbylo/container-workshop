@@ -4,6 +4,21 @@ This workhop shows you how to build and use Linux containers on your laptop and 
 
 See below for what you need to configure/install before starting these labs.
 
+# Fetch the container image (Docker) needed for this workshop
+
+Ensure Docker is installed and running on your laptop.  See below instructions.
+
+If you have not done so already, pull the needed image as described below.
+
+Alternatively, if pulling the images is not possible for any reason the instructor will provide you with the needed image files which you can 
+copy onto your laptop and then load into Docker as follows:
+
+```
+docker load -i centos7.saved
+docker load -i mysql57.saved
+```
+
+
 # Fork the example app repository in Github
 
 First you need to fork the example app repository.  Log into your own Githug account (or create one), then go to the example repository located here:
