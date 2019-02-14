@@ -113,14 +113,15 @@ been created"
     1. Select the repository "flask-vote-app"
 1. Click Continue
     1. Leave "Trigger for all branches and tags" as default 
-1. Click Contnue 
+1. Click Continue 
     1. Select "/Dockerfile" as the path to dockefile
 1. Click on Continue 
     1. Context should be "/"
 1. Click on Continue until it's complete!
 
-You can start the build, either by clicking on the 'Start New Build" button or by commiting your
-code changes with git.
+You can start the build, either by
+1. clicking on the "_Start New Build_" button or
+1. by commiting your code changes with git.
 
 The build should start.
 
@@ -130,13 +131,38 @@ The image should then be made available.
 
 As described above, make the image "public" so others can access it. 
 
+## Allow others to run your container
+
+Finally, we can check if others can "pull" and run your image from the following repository:
+
+```
+echo quay.io/$MY_QUAY_USER/flask-vote-app:latest
+```
+
+Ask your neighbour to try out the following:
+
+```
+docker run -it --rm -p 8080:8080 --name=vote-app quay.io/$MY_QUAY_USER/flask-vote-app:latest
+```
+
+Is it possible to download and test the image?
+
+Note, do all the layers get downloaded or only some of them?  Why?
+
+Remember to stop your container:
+
+```
+docker kill vote-app
+```
+
+
 **That's the end of the lab.**
 
 ---
 Optionally, you might like to try ...
 
 After your images have been uploded to Quay, check to see if they have been scanned for any
-vulnerabilities or is they are still in the queue.  If so, what vulnerabilities are found and how
-might you fix that? 
+vulnerabilities or if they are still in the scanning queue.  If so, what vulnerabilities are found and how
+might you fix them? 
 
 
