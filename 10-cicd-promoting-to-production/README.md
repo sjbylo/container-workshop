@@ -19,7 +19,7 @@ oc replace -f openshift/pipeline-full.yaml
 buildconfig.build.openshift.io/vote-app-pipeline created
 ```
 
-Take a look in the OCP web console to see the pipeline code.  Go to the Menu on the left under Build->Pipeline->Configuration to see the Jenkins Pipeline code.  There is one more stage added called "Promote to Prod" which waits for input and then promotes (tags) the image into production.
+Take a look in the OpenShift web console to see the pipeline code.  Go to the Menu on the left under Build->Pipeline->Configuration to see the Jenkins Pipeline code.  There is one more stage added called "Promote to Prod" which waits for input and then promotes (tags) the image into production.
 
 Now you need to set up the application for production.
 

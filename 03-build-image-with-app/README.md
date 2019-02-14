@@ -7,8 +7,9 @@ First, if you don't have the application source code already on your laptop (fro
 clone the source code following URL.
 
 ```
-FIXME
+git clone https://github.com/YOUR_GITHUB_USERNAME/flask-vote-app.git
 ```
+Remember to clone your own repository that you forked in a previous lab!
 
 Change directory into the source code folder:
 

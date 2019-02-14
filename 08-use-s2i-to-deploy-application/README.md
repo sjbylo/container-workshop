@@ -8,10 +8,10 @@ which does the following:
 1 The image is pushed into the internal registry of OpenShift. 
 1 The container is launched since the DeploymentConfig is configured to launch or re-launch the container if the image is added or updated. 
 
-"oc new-app" is the command that can initialize an application on OCP. 
+"oc new-app" is the command that can initialize an application on OpenShift. 
 This command will use the builder image (python:2.7) and run s2i against the source code, fetched from Github. 
 
-Run the following command to set up s2i for our application.  "oc new-app" is the command that can initialize an application on OCP. 
+Run the following command to set up s2i for our application.  "oc new-app" is the command that can initialize an application on OpenShift. 
 
 ```
 oc new-app python:2.7~https://github.com/YOUR_GITHUB_USERNAME/flask-vote-app.git --name vote-app

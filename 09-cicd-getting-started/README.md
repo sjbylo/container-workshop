@@ -52,10 +52,9 @@ To do this, run this command which removes the "automatic: true" setting in the 
 
 ```
 oc set triggers dc vote-app --manual
-###oc patch dc vote-app -p "`cat openshift/remove-image-change-trigger.json`"  # check and FIXME
 ```
 
-Now, you can start the Pipeline.
+Now, you can start the Pipeline!
 
 View the Pipeline in the Web console.  As described above, navigate via the Menu to Build->Pipeline and click on 
 "Start Pipeline" (on the right side).   Wait a few seconds and then view the log and you will see the Jenkins Pipeline progressing.

@@ -3,11 +3,11 @@
 In this lab you will launch a container image into a pod (Kubernetes container) on OpenShift and then access it via an endpoint.
 
 *NOTE: It should be possible to run these labs on Minishift.  Minishift is a OpenShift, running on your laptop. You can try to use 
-Minishift if it is working properly.  However, it is recommended to follow these labs using the online OCP envrionment.*
+Minishift if it is working properly.  However, it is recommended to follow these labs using the online OpenShift envrionment.*
 
 You *cannot* start this lap without access to OpenShift.  Wait for your instructor to show you how to access it before you continue.
 
-After you have the access credentials (host, username and password), access the enviroment and ensure you are logged into OCP. 
+After you have the access credentials (host, username and password), access the enviroment and ensure you are logged into OpenShift. 
 
 Use the "whoami" command to determine which user you are using.
 
@@ -16,7 +16,7 @@ oc whoami
 ```
 You should see your username.
 
-If you are not logged in to OCP properly, use the folling:
+If you are not logged in to OpenShift properly, use the folling:
 
 ```
 oc login -u YOUR_USERNAME
@@ -56,7 +56,7 @@ oc new-app -h
 ```
 
 The command we'll use below will reach out to quay.io, inspect the image meta-data and then decide what to do. In our case it will do the following:
-- create a virtual image object (called an image stream).  Image Streams enable OCP to track any changes in an image - even if the image is located an external registry like quay.io - and then trigger processes in OpenShift, e.g. re-build or deploy containers if base images change.
+- create a virtual image object (called an image stream).  Image Streams enable OpenShift to track any changes in an image - even if the image is located an external registry like quay.io - and then trigger processes in OpenShift, e.g. re-build or deploy containers if base images change.
 - Create a deployment object (deployment config).  Deployment Configuration objects knows the specification of a pod to be launched and also knows how to manage the pod over the course of its life (e.g. number of pods to run, how to update, rollbacks etc) 
 - A service object is created.  The service object acts like an internal load balancer for a set of identical pods. 
 
@@ -79,7 +79,7 @@ If all looks well, then execute the command:
 oc new-app quay.io/YOUR_QUAY_USERNAME/flask-vote-app:latest --name vote-app 
 ```
 
-It can take a while to pull the image for the first time, especially if you are running OCP on your laptop and downloading over a shared Internet connection.   But, if you already have the centos image layers cached in OpenShift, then the download should be a lot faster. 
+It can take a while to pull the image for the first time, especially if you are running OpenShift on your laptop and downloading over a shared Internet connection.   But, if you already have the centos image layers cached in OpenShift, then the download should be a lot faster. 
 After pulling the image from quay.io, the deployment config object will automatically launch it into a vote-app pod. 
 
 Check what's happening with the following command.
@@ -96,7 +96,7 @@ Eventually, you should see the pod running, as show.
 Once the pod is up ("Running") and ready ("1/1") you can try and access the application in the pod.
 
 
-But there is one problem.  By default, the IP address of the pod is not reachable from networks outside of the OCP cluster. 
+But there is one problem.  By default, the IP address of the pod is not reachable from networks outside of the OpenShift cluster. 
 To access the vote-app pod, we need to create a way to connect to it from an outside network.  To do this, we create a "route" object.  
 
 Create a route object with the following command:
@@ -105,7 +105,7 @@ Create a route object with the following command:
 oc expose svc vote-app
 ```
 
-This will create a _route_ object, which will in turn configure the OCP router (using haproxy) to pass incoming http based connections to our pod (or pods) running inside the OCP cluster. 
+This will create a _route_ object, which will in turn configure the OpenShift router (using haproxy) to pass incoming http based connections to our pod (or pods) running inside the OpenShift cluster. 
 
 Fetch the hostname of the route.
 
@@ -151,7 +151,7 @@ After any changes are made to the image - e.g. you re-build the image on quay.io
 Optionally, you might like to try ...
 
 See how easy it is to change the application endpoint (route object) to use https instead of http. 
-You can change this in the OCP web console, so log in.
+You can change this in the OpenShift web console, so log in.
 
 Go to your project, then to Applications (left menu), then to Routes, select your route called vote-app, click Actions->Edit and see 
 if you can find the security option and change from http to https?
