@@ -86,30 +86,40 @@ pulled by all users._".
 ---
 ## Let Quay.io build the image for you and make it publicly available!
 
-For Quay.io to build the image for you, you need to upload our application's source code and ask Quay to start a new build.
+For Quay.io to build the image for you, you need to link Quay with *your* Github source code
+repository.
 
-First, you will need to archive the source code directory, then upload the archive file to Quay.io.
-
-First, it is important your current working directory is our application's source code.
-
-```
-cd flask-vote-app
-```
-
-To create an archive, you could use this command:
+Create a repository in Quay.io using a GitHub repository URL _as the source_.  If you don't have a GitHub account, 
+create one and then use the following repository (your source code).  Link this repository with quay.io.
 
 ```
-tar czvf ~/vote-app.tgz *
+https://github.com/YOUR_GITHUB_USERNAME/flask-vote-app.git
 ```
+
+To do this, go to Quay.io, create a new repository and link it to *your* forked repository in GitHub. 
 
 Now create a new repository using the Quay web console:
 
 1. Go to https://quay.io/repository/
 1. Click on "+ Create New Repository" and name it "flask-vote-app"
 1. fill in the form, remember to set "Public" access 
-1. set "Initialize from a Dockerfile" and then, at the bottom,
-1. select and upload your archive file (~/vote-app.tgz).
+1. choose "Link to a GitHub Repository Push"
 1. Click on "Create public repository" 
+  1. Note "You will be redirected to authorize for GitHub Repository Push once the repository has
+been created"
+1. On the next "Setup Build Trigger" page:
+  1. select the Github organisation. Click "Continue"
+1. Select the repository "flask-vote-app"
+1. Click Continue
+1. Leave "Trigger for all branches and tags" as default and
+1. CLick Contnue 
+1. Select "/Dockerfile" as the path to dockefile
+1. Click on Continue 
+1. Context should be "/"
+1. Click on Continue until it's complete!
+
+You can start the build, either by clicking on the 'Start New Build" button or by commiting your
+code changes with git.
 
 The build should start.
 
@@ -124,13 +134,8 @@ As described above, make the image "public" so others can access it.
 ---
 Optionally, you might like to try ...
 
-Create a repository in Quay.io using a GitHub repository URL as the source.  If you don't have a GitHub account, 
-create one and then fork the following repository (our source code).  Link this repository with quay.io.
-
-```
-https://github.com/YOUR_GITHUB_USERNAME/flask-vote-app.git
-```
-
-To do this, go to Quay.io, create a new repository and link it to *your* forked repository in GitHub. 
+After your images have been uploded to Quay, check to see if they have been scanned for any
+vulnerabilities or is they are still in the queue.  If so, what vulnerabilities are found and how
+might you fix that? 
 
 
