@@ -109,13 +109,13 @@ Now create a new repository using the Quay web console:
 been created"
 1. On the next "Setup Build Trigger" page:
     1. select the Github organisation. Click "Continue"
-1. Select the repository "flask-vote-app"
+    1. Select the repository "flask-vote-app"
 1. Click Continue
-1. Leave "Trigger for all branches and tags" as default and
-1. CLick Contnue 
-1. Select "/Dockerfile" as the path to dockefile
+    1. Leave "Trigger for all branches and tags" as default 
+1. Click Contnue 
+    1. Select "/Dockerfile" as the path to dockefile
 1. Click on Continue 
-1. Context should be "/"
+    1. Context should be "/"
 1. Click on Continue until it's complete!
 
 You can start the build, either by clicking on the 'Start New Build" button or by commiting your
