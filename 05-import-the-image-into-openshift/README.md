@@ -176,7 +176,7 @@ Test https is working using the self-signed certificate that is built into OpenS
 curl -k https://vote-app-myproject.openshift.example.com
 ```
 
-Remember to switch back from https to http again by removing the tls configuration in the route object.
+Remember to switch back from https to http again by removing the `tls` configuration in the route object.
 
 ```
 oc patch route vote-app --type json -p '[{ "op": "remove", "path":"/spec/tls"}]'
