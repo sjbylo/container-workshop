@@ -63,12 +63,13 @@ The command we'll use below will reach out to quay.io, inspect the image meta-da
 - create a virtual image object (called an ImageStream).  ImageStreams enable OpenShift to track any changes in an image - 
 even if the image is located on an external registry like quay.io - and then trigger processes in 
 OpenShift, e.g. re-build or deploy containers if base images change.
-- Create a deployment object (deployment config).  Deployment Configuration objects knows the specification of a pod to be launched and also knows how to manage the pod over the course of its life (e.g. number of pods to run, how to update, rollbacks etc) 
+- Create a deployment object (DeploymentConfig).  DeploymentConfiguration objects know the specification of a pod to be launched and also knows how to manage the pod over the course of its life (e.g. number of pods to run, how to update, roll back etc) 
 - A service object is created.  The service object acts like an internal load balancer for a set of identical pods. 
 
 (Note that if you were able to create your own vote app image in your own quay.io account, you can use yours instead).
 
-Now, we will launch the image. 
+---
+## Now, we will launch the image. 
 
 Run the following command to initialize the application and launch the container image.
 
@@ -79,14 +80,16 @@ oc new-app quay.io/YOUR_QUAY_USERNAME/flask-vote-app:latest --name vote-app --dr
 ```
 Remember to replace YOUR_QUAY_USERNAME with your Quay username!
 
-If all looks well, then execute the command: 
+Have a look at the dry run output.  Does it make sense what it will do? 
+
+If all looks well, then execute the command without the dry run: 
 
 ```
 oc new-app quay.io/YOUR_QUAY_USERNAME/flask-vote-app:latest --name vote-app 
 ```
 
 It can take a while to pull the image for the first time, especially if you are running OpenShift on your laptop and downloading over a shared Internet connection.   But, if you already have the centos image layers cached in OpenShift, then the download should be a lot faster. 
-After pulling the image from quay.io, the deployment config object will automatically launch it into a vote-app pod. 
+After pulling the image from quay.io, the DeploymentConfig object will automatically launch it into a vote-app pod. 
 
 Check what's happening with the following command.
 
@@ -102,7 +105,7 @@ Eventually, you should see the pod running, as show.
 Once the pod is up ("Running") and ready ("1/1") you can try and access the application in the pod.
 
 
-But there is one problem.  By default, the IP address of the pod is not reachable from networks outside of the OpenShift cluster. 
+Now, we want to access the application, but there is one problem.  By default, the IP address of the pod is not reachable from networks outside of the OpenShift cluster. 
 To access the vote-app pod, we need to create a way to connect to it from an outside network.  To do this, we create a "route" object.  
 
 Create a route object with the following command:
@@ -113,7 +116,7 @@ oc expose svc vote-app
 
 This will create a _route_ object, which will in turn configure the OpenShift router (using haproxy) to pass incoming http based connections to our pod (or pods) running inside the OpenShift cluster. 
 
-Fetch the hostname of the route.
+Fetch the hostname of the route:
 
 ```
 oc get route vote-app 
@@ -127,15 +130,13 @@ For convenience, the following command will fetch the route name into a variable
 VOTE_APP_ROUTE=$(oc get route vote-app --template='{{.spec.host}}'); echo $VOTE_APP_ROUTE
 ```
 
-Now try to access the pod through this route.
+Now try to access the pod through this route:
 
 ```
-curl vote-app-myproject.openshift.example.com
-or 
 curl $VOTE_APP_ROUTE
 ```
 
-Again, you should see the HTML output containing "<title>Favourite Linux distribution</title>". 
+Again, you should see the HTML output containing "`<title>Favourite Linux distribution</title>`". 
 
 Try it out in a browser.  You should see the working voting app.
 
