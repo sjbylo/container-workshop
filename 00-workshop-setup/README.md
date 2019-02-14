@@ -62,17 +62,17 @@ A) Absolute minimum requirements - access OpenShift via WiFi
 - Register for a free github.com account at https://github.com/join 
 - Note: With just this, you can perform all of the OpenShift labs (in the cloud or with Minishift), but not the Docker based labs on your laptop. 
 
-* Best case - install Docker on your laptop 
+B) Best case - install Docker on your laptop 
 - A laptop which can run Docker 
     - Docker for Windows or Docker for Mac (or on Linux!) installed and working on the laptop 
 - It will be very helpful if the following commands complete successfully before coming to the workshop:
     - docker pull docker.io/library/centos:7.6.1810 
     - docker pull docker.io/library/mysql:5.7.25 
 - The following command should output "CentOS Linux":
- - docker run -it --rm centos:7 cat /etc/redhat-release
- - CentOS Linux release 7.6.1810 (Core) 
+    - docker run -it --rm centos:7 cat /etc/redhat-release
+    - CentOS Linux release 7.6.1810 (Core) 
 - A Quay.io account 
- - Register for a free account at https://quay.io/
- - Generate and retrieve your encrypted password from the Settings menu. We will be using it to interact with the Quay registry. 
+    - Register for a free account at https://quay.io/
+    - Generate and retrieve your encrypted password from the Settings menu. We will be using it to interact with the Quay registry. 
 - Note: With the above, you can perform all of the labs. 
 
