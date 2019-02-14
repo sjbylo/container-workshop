@@ -3,8 +3,8 @@
 In this lab you will build a container image for the application using Docker. You will take a look at the Dockerfile which contains 
 all the instructions needed to build the application and then you will run the application in a container. 
 
-First, if you don't have the application source code already on your laptop (from previous lab),
-clone the source code following URL.
+First, if you don't have the application source code already on your laptop (from a previous lab),
+clone the source code using the following URL.
 
 ```
 git clone https://github.com/YOUR_GITHUB_USERNAME/flask-vote-app.git
@@ -23,12 +23,13 @@ Examine the Dockerfile:
 cat Dockerfile
 ```
 
-Look at each Dockerfile directive, e.g. RUN and COPY etc, to see how a fresh image is built up, layer by layer, on top of the base image FROM centos.  Each directive creates one new layer in the docker image. 
+Look at each Dockerfile directive, e.g. "RUN" and "COPY" etc, to see how a fresh image is built up, layer by layer, on top of the base image 
+"FROM centos".  Each directive creates one new layer in the docker image. 
 
 Build the new image with the following command.
 
 This command will also tag (-t) the new image with the name _flask-vote-app:latest_.
-Don't forget the '.' ("build context") which means build using the files in the current working directory (our source code). 
+Don't forget the "." (the "build context") which means build using the files in the current working directory (our source code). 
 
 ```
 docker build -t flask-vote-app:latest .
@@ -38,13 +39,18 @@ This might take a few minutes. Once it's successfully completed continue with th
 
 Launch your fresh image named _flask-vote-app:latest_ with the following command. 
 
-The command will make the container accessible on port 8080 (-p), name the container _vote-app_ and remove the container after it has stopped (--rm).   You should see the python application starting up and then listening on port 8080.
+The command will:
+- make the container accessible on port 8080 (-p)
+- name the container _vote-app_ and 
+- remove the container after it has stopped (--rm). 
+
+Similar to a previous lab, you should see the python application starting up and then listening on port 8080.
 
 ```
 docker run -it --rm -p 8080:8080 --name=vote-app flask-vote-app:latest
 ```
 
-As in the previous labs, test your app - but this time it's running in a container.
+As in the previous labs, test your app - but this time it's running in a container!
 
 ```
 curl http://localhost:8080/
@@ -70,6 +76,7 @@ docker exec -it vote-app /bin/bash
 ps -ef
 ls -l /
 id
+whoami
 exit
 ```
 
