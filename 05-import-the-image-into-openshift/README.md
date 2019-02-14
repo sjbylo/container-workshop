@@ -141,7 +141,8 @@ Again, you should see the HTML output containing "`<title>Favourite Linux distri
 Try it out in a browser.  You should see the working voting app.
 
 
-# Set automatic re-deployment if the source image is updated. 
+---
+## Set automatic re-deployment if the source image is updated. 
 
 We will also mark the image stream object to be refreshed periodically (--scheduled=true) so that any changes to the image in Quay.io will trigger an application refresh:
 

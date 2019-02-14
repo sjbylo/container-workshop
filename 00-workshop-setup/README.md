@@ -4,7 +4,7 @@ This workshop shows you how to build and use Linux containers on your laptop and
 
 See below ("What you should do before...") for what you need to configure/install before starting these labs.
 
-# Fetch the container (Docker) images you need for this workshop
+## Fetch the container (Docker) images you need for this workshop
 
 Ensure Docker is installed and running on your laptop.  See below instructions "What you should do before...".
 
@@ -24,7 +24,8 @@ Loaded image: mysql:5.7.15
 ```
 
 
-# Fork the example application repository in GitHub
+---
+## Fork the example application repository in GitHub
 
 First you need to fork the example application repository.  
 Log into your own GitHub account (or create one), then go to the example repository located here:
@@ -53,7 +54,8 @@ Later on in the labs, you will be asked to clone your source code.  Don't worry 
 laptop, you will be able to use git inside the online lab environment.
 
 
-# What you should do before following all of the hands-on labs.
+---
+## What you should do before following all of the hands-on labs.
 
 A) Absolute minimum requirements - access OpenShift via WiFi  
 - A laptop with a modern up-to-date browser
