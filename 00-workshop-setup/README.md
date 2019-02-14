@@ -1,6 +1,6 @@
 # Setting up for the workshop
 
-This workhop shows you how to build and use Linux containers on your laptop and then how to run and manage these same container images on OpenShift.
+This workshop shows you how to build and use Linux containers on your laptop and then how to run and manage these same container images on OpenShift.
 
 See below for what you need to configure/install before starting these labs.
 
@@ -21,7 +21,7 @@ docker load -i mysql57.saved
 
 # Fork the example app repository in Github
 
-First you need to fork the example app repository.  Log into your own Githug account (or create one), then go to the example repository located here:
+First you need to fork the example app repository.  Log into your own Github account (or create one), then go to the example repository located here:
 
 ```
 https://github.com/sjbylo/flask-vote-app 
@@ -31,12 +31,12 @@ it is important you *do not* use this repository directly, but that you _fork_
 (copy) it and work with your own copy.
 
 Click on the "Form" button.  Github will make a copy and you will see your own version of it.  
-Notice the URL now container your Guthub username and no longer "sjbylo".  
-Later on in the labs you will be asked to access your repoisitory.  
+Notice the URL now container your Github username and no longer "sjbylo".  
+Later on in the labs you will be asked to access your repository.  
 To help you get the URL, click on the 'Clone or download" button and copy the URL 
 into your copy n paste buffer and paste it into your terminal when ask to.
 
-Your repo's URL will look something like this:
+Your repository's URL will look something like this:
 
 ```
 https://github.com/YOUR_GITHUB_USERNAME/flask-vote-app.git
@@ -61,7 +61,7 @@ B) Best case - install Docker on your laptop
 - It will be very helpful if the following commands complete successfully before coming to the workshop:
 - docker pull docker.io/library/centos:7.6.1810 
 - docker pull docker.io/library/mysql:5.7.25 
-- The following command should output “CentOS Linux…”:
+- The following command should output “CentOS Linux��”:
 - docker run -it --rm centos:7 cat /etc/redhat-release
 - CentOS Linux release 7.6.1810 (Core) 
 - Quay.io account 

@@ -46,7 +46,7 @@ If you could somehow use your root privileges _outside of the container_ (escape
 other machine) then that might pose a huge problem.  That is why the underlying container technology that is 
 running in the host Linux OS must be secure. 
 
-Yes!  Your container is running on Linux, even though you are running Docker on Windows or on a mac laptop.
+Yes!  Your container is running on Linux, even though you are running Docker on Windows or on a Mac laptop.
 
 **That's the end of the lab.**
 

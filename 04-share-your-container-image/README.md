@@ -5,7 +5,7 @@ In this lab you will upload your image into a container registry so you can shar
 **Note: If you encounter problems uploading your image due to network connectivity issues, don't worry because the next labs can use another identical image which is already available**.
 
 To share your image you need to upload it to a *container registry*.  _Docker.io_ is probably one you could use. 
-Though, for these labs we will use _quay.io_ because it also has some very interesting features, e.g. builing your container image and also automatic security vulnerability scanning of your images. 
+Though, for these labs we will use _quay.io_ because it also has some very interesting features, e.g. building your container image and also automatic security vulnerability scanning of your images. 
 
 If not already, sign up for a free account at http://quay.io/.  You will need to log into quay.io from the docker command line, so remember your username and password.  (Alternatively, if you wish, you can create an encrypted password in the Quay account settings for added security).
 

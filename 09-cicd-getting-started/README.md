@@ -13,7 +13,7 @@ git clone https://github.com/YOUR_GITHUB_USERNAME/flask-vote-app.git
 ```
 (don't forget to replace "YOUR_GITHUB_USERNAME" with your real Github username!)
 
-As usual, wnsure you are working in the source code directory:
+As usual, ensure you are working in the source code directory:
 
 ```
 cd flask-vote-app

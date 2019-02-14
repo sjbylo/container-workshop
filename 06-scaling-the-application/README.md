@@ -39,7 +39,7 @@ oc get rc/vote-app-1
 NAME          DESIRED   CURRENT   AGE
 vote-app-1    1         1         2h
 ```
-Nite that the desired and current values are both 1, so one instance should be running.
+Note that the desired and current values are both 1, so one instance should be running.
 
 
 ## Scale the application
@@ -92,7 +92,7 @@ NAME          ENDPOINTS                                            AGE
 vote-app      10.128.0.33:8080,10.129.0.30:8080,10.129.2.27:8080   15m
 ```
 
-Note that the name of the endpoints is `vote-app` and there are three ips addresses for the three pods.
+Note that the name of the endpoints is `vote-app` and there are three IP addresses addresses for the three pods.
 
 Run the `oc idle endpoints/vote-app` command to idle the application
 

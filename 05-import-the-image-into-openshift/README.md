@@ -3,11 +3,11 @@
 In this lab you will launch a container image into a pod (Kubernetes container) on OpenShift and then access it via an endpoint.
 
 *NOTE: It should be possible to run these labs on Minishift.  Minishift is a OpenShift, running on your laptop. You can try to use 
-Minishift if it is working properly.  However, it is recommended to follow these labs using the online OpenShift envrionment.*
+Minishift if it is working properly.  However, it is recommended to follow these labs using the online OpenShift environment.*
 
 You *cannot* start this lap without access to OpenShift.  Wait for your instructor to show you how to access it before you continue.
 
-After you have the access credentials (host, username and password), access the enviroment and ensure you are logged into OpenShift. 
+After you have the access credentials (host, username and password), access the environment and ensure you are logged into OpenShift. 
 
 Use the "whoami" command to determine which user you are using.
 
@@ -16,7 +16,7 @@ oc whoami
 ```
 You should see your username.
 
-If you are not logged in to OpenShift properly, use the folling:
+If you are not logged in to OpenShift properly, use the following:
 
 ```
 oc login -u YOUR_USERNAME
@@ -115,7 +115,7 @@ oc get route vote-app
 
 You should see a route similar to "vote-app-myproject.openshift.example.com".
 
-For contenience, the following command will fetch the route name into a variable:
+For convenience, the following command will fetch the route name into a variable:
 
 ```
 VOTE_APP_ROUTE=$(oc get route vote-app --template='{{.spec.host}}'); echo $VOTE_APP_ROUTE
