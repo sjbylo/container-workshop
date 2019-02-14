@@ -2,16 +2,16 @@
 
 This workshop shows you how to build and use Linux containers on your laptop and then how to run and manage these same container images on OpenShift.
 
-See below for what you need to configure/install before starting these labs.
+See below ("What you should do before...") for what you need to configure/install before starting these labs.
 
-# Fetch the container image (Docker) needed for this workshop
+# Fetch the container (Docker) images you need for this workshop
 
-Ensure Docker is installed and running on your laptop.  See below instructions.
+Ensure Docker is installed and running on your laptop.  See below instructions "What you should do before...".
 
 If you have not done so already, pull the needed image as described below.
 
-Alternatively, if pulling the images is not possible for any reason the instructor will provide you with the needed image files which you can 
-copy onto your laptop and then load into Docker as follows:
+Alternatively, if pulling the images is not possible for any reason, the instructor will provide you with the needed image files
+which you can copy onto your laptop and then load into Docker as follows:
 
 ```
 docker load -i centos7.saved
@@ -21,20 +21,20 @@ docker load -i mysql57.saved
 
 # Fork the example app repository in Github
 
-First you need to fork the example app repository.  Log into your own Github account (or create one), then go to the example repository located here:
+First you need to fork the example app repository.  
+Log into your own Github account (or create one), then go to the example repository located here:
 
 ```
 https://github.com/sjbylo/flask-vote-app 
 ```
-Notice that the example app belongs to Github user "sjbylo".  Because you will be required to make source code changes, 
-it is important you *do not* use this repository directly, but that you _fork_ 
-(copy) it and work with your own copy.
 
-Click on the "Form" button.  Github will make a copy and you will see your own version of it.  
-Notice the URL now container your Github username and no longer "sjbylo".  
+Notice that the example app belongs to Github user "sjbylo".  Because you will be required to make source code changes, 
+it is important you *do not* use this repository directly, but that you _fork_ (copy) it and work with your own copy.
+
+Click on the "Fork" button.  Github will make a copy and you will see your own version of it in your own Github account.
+Check that the URL now contains your Github username and no longer "sjbylo"!
 Later on in the labs you will be asked to access your repository.  
-To help you get the URL, click on the 'Clone or download" button and copy the URL 
-into your copy n paste buffer and paste it into your terminal when ask to.
+To help you get the URL, click on the 'Clone or download" button and copy & paste the URL into your terminal when ask to.
 
 Your repository's URL will look something like this:
 
@@ -46,7 +46,7 @@ Later in the labs, you will be asked to clone your source code.  Don't worry if 
 laptop, you will be able to use git inside the online lab environment.
 
 
-# What you should bring if you want to follow all of the hands-on labs.
+# What you should do before following all of the hands-on labs.
 
 A) Absolute minimum requirements - access OpenShift via WiFi  
 - A laptop with a modern up-to-date browser
