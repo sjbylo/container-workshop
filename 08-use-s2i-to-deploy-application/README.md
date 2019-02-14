@@ -56,7 +56,7 @@ Open the application in your browser and check it's working.
 
 Now you can update the source code and manually trigger a re-build which will also trigger a fresh deployment. 
 
-We will change the definition of the question for the vote-app.
+We will change the definition of the `question` that the vote-app asks.
 
 Go to your source code on GitHub.  Find the file seeds/seed_data.json and edit it (click on the pen icon).
 
