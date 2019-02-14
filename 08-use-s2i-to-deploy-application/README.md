@@ -80,7 +80,8 @@ Now you can trigger a new build and follow the progress (--follow --wait) using 
 oc start-build vote-app --follow --wait 
 ```
 
-After the image is pushed, see the example application build and then re-deploy. 
+After the application is built and the image is pushed in the internal registry, the application is
+then re-deployed. 
 
 ```
 watch oc get pod

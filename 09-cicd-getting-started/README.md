@@ -1,6 +1,7 @@
 # Getting started with CI/CD
 
 In this lab  you will create a CI/CD Pipeline based on Jenkins.  
+
 The Pipeline is made up of three stages:
 - building the application, then
 - deploying the application and then
