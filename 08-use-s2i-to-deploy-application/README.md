@@ -3,10 +3,10 @@
 In this lab you will enable OpenShift to build our application directly on OpenShift itself. This is done using Source 2 Image (s2i) 
 which does the following:
 
-1 Launches a container from a "builder image" of the matching runtime.  In this case that's a python 2.7 builder image.
-1 Executes a build of the application in the running builder container.  After a successful build, s2i commits a new image containing the application. 
-1 The image is pushed into the internal registry of OpenShift. 
-1 The container is launched since the DeploymentConfig is configured to launch or re-launch the container if the image is added or updated. 
+1. Launches a container from a "builder image" of the matching runtime.  In this case that's a python 2.7 builder image.
+1. Executes a build of the application in the running builder container.  After a successful build, s2i commits a new image containing the application. 
+1. The image is pushed into the internal registry of OpenShift. 
+1. The container is launched since the DeploymentConfig is configured to launch or re-launch the container if the image is added or updated. 
 
 "oc new-app" is the command that can initialize an application on OpenShift. 
 This command will use the builder image (python:2.7) and run s2i against the source code, fetched from GitHub. 

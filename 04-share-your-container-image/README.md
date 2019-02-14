@@ -104,12 +104,12 @@ tar czvf ~/vote-app.tgz *
 
 Now create a new repository using the Quay web console:
 
-1 Go to https://quay.io/repository/
-1 Click on "+ Create New Repository" and name it "flask-vote-app"
-1 fill in the form, remember to set "Public" access 
-1 set "Initialize from a Dockerfile" and then, at the bottom,
-1 select and upload your archive file (~/vote-app.tgz).
-1 Click on "Create public repository" 
+1. Go to https://quay.io/repository/
+1. Click on "+ Create New Repository" and name it "flask-vote-app"
+1. fill in the form, remember to set "Public" access 
+1. set "Initialize from a Dockerfile" and then, at the bottom,
+1. select and upload your archive file (~/vote-app.tgz).
+1. Click on "Create public repository" 
 
 The build should start.
 
