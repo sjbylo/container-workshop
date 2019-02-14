@@ -29,7 +29,7 @@ Tag the application image with "prod" to make it available to deploy into produc
 oc tag vote-app:latest vote-app:prod
 ```
 
-This will create a new tag ("prod") that's pointing to a specific version of the app.  This is the version that will run in production.  
+This will create a new tag ("prod") that's pointing to a specific version of the application.  This is the version that will run in production.  
 This provides fine-grained control of what exactly is running in production. Only if the image is "promoted" by 
 tagging it like this, will it run in production. 
 

@@ -2,9 +2,9 @@
 
 In this lab  you will create a CI/CD Pipeline based on Jenkins.  
 The Pipeline is made up of three stages:
-- building the app, then
-- deploying the app and then
-- testing the app. 
+- building the application, then
+- deploying the application and then
+- testing the application. 
 
 If you have not already done do, fetch your source code:
 
@@ -45,7 +45,7 @@ vote-app            Source            Git       1
 vote-app-pipeline   JenkinsPipeline             0
 ```
 
-There is one more thing we need to do before can use the CI/CD pipeline.  We need to disable automatic deployment when the app 
+There is one more thing we need to do before can use the CI/CD pipeline.  We need to disable automatic deployment when the application 
 image is updated.  This is because we want to give the Jenkins Pipeline control of this process and not OpenShift itself. 
 
 To do this, run this command which removes the "automatic: true" setting in the vote-app DeploymentConfig:
@@ -71,7 +71,7 @@ oc start-build vote-app-pipeline
 **That's the end of the lab**
 
 If you are interested to try something else, take a look at the below tutorial.  Add a final stage, after the "Test" stage, which 
-scales the app pods to 3.  You can edit the Jenkinsfile directly in the web console. Don't forget to make a backup 
+scales the application pods to 3.  You can edit the Jenkinsfile directly in the web console. Don't forget to make a backup 
 (cut and paste into a file) of the Jenkinsfile before making any changes!
 
 See the _Jenkins Pipeline Tutorial_ for more information:

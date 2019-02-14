@@ -41,7 +41,7 @@ vote-app-1-gxq5k   1/1       Running     0          10m
 ```
 
 The vote-app-1-build pod has completed what it was doing, namely building the application. 
-Now the vote-app-1-gxq5k pod is running the app.
+Now the vote-app-1-gxq5k pod is running the application.
 
 If not already, expose the application to the external network:
 
@@ -52,7 +52,7 @@ oc expose svc vote-app
 Open the application in your browser and check it's working. 
 
 
-## Update the source code and re-build the app
+## Update the source code and re-build the application
 
 Now you can update the source code and manually trigger a re-build which will also trigger a fresh deployment. 
 
@@ -97,7 +97,7 @@ curl $VOTE_APP_ROUTE
 
 Now you can roll back to the previous version of the application by simply re-deploying the previous image.
 
-Fist view the history of rollouts for our app:
+Fist view the history of rollouts for our application:
 
 ```
 oc rollout history dc vote-app

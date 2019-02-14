@@ -50,7 +50,7 @@ Similar to a previous lab, you should see the python application starting up and
 docker run -it --rm -p 8080:8080 --name=vote-app flask-vote-app:latest
 ```
 
-As in the previous labs, test your app - but this time it's running in a container!
+As in the previous labs, test your application - but this time it's running in a container!
 
 ```
 curl http://localhost:8080/
@@ -85,7 +85,7 @@ whoami
 exit
 ```
 
-See if you can discover which Linux user the app/container is running as.  Which user ID is it and why? 
+See if you can discover which Linux user the application/container is running as.  Which user ID is it and why? 
 
 Don't forget to remove your running container again:
 

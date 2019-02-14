@@ -24,7 +24,7 @@ If you still see the same error message, ensure you have forked the example appl
 ---
 ## Build and run the application
 
-Change into the source code directory of the app.
+Change into the source code directory of the application.
 
 ```
 cd flask-vote-app
@@ -35,7 +35,7 @@ The application is a simple voting application which collects answers to a simpl
 Have a look at the contents of the source code directory.  Note the following files/directories:
 - *app.py*: contains the python source code of the application
 - *requirements.txt*: contains the python dependencies that need to be installed for the application to work
-- *seeds/seed_data.json*: contains the content of the voting app, the question that will be asked
+- *seeds/seed_data.json*: contains the content of the voting application, the question that will be asked
 - *templates*: contains the html templates that will be used to generate content for the browser
 
 Note the application dependencies which are listed in the requirements file:

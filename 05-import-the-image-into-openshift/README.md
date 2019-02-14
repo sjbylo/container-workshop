@@ -66,7 +66,7 @@ OpenShift, e.g. re-build or deploy containers if base images change.
 - Create a deployment object (DeploymentConfig).  DeploymentConfiguration objects know the specification of a pod to be launched and also knows how to manage the pod over the course of its life (e.g. number of pods to run, how to update, roll back etc) 
 - A service object is created.  The service object acts like an internal load balancer for a set of identical pods. 
 
-(Note that if you were able to create your own vote app image in your own quay.io account, you can use yours instead).
+(Note that if you were able to create your own vote application image in your own quay.io account, you can use yours instead).
 
 ---
 ## Now, we will launch the image. 
@@ -138,7 +138,7 @@ curl $VOTE_APP_ROUTE
 
 Again, you should see the HTML output containing "`<title>Favourite Linux distribution</title>`". 
 
-Try it out in a browser.  You should see the working voting app.
+Try it out in a browser.  You should see the working voting application.
 
 
 ---
