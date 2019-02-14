@@ -1,13 +1,13 @@
-# Build & test the application locally on your laptop  
+# Build & test the example application locally on your laptop  
 
-In this lab you will download the source code of our workshop application and get it running on your laptop. 
+In this lab you will download the source code of our example application and get it running on your laptop. 
 
-If you have python, pip and git installed on your laptop, you can complete this part. 
+If you have python, pip and git installed on your laptop you can complete this part. Otherwise you can skip this lab.
 To run the app on your laptop, first download the source code from Git Hub. You can
 download the source code from the command line like this.
 
 ```
-git clone https://github.com/sjbylo/flask-vote-app.git
+git clone https://github.com/YOUR_GITHUB_USERNAME/flask-vote-app.git
 ```
 
 Change into the source code directory of the app.
