@@ -77,7 +77,7 @@ Close the extra terminal window and quit the application using CTRL+C.
 
 If you are interested, you can test the application using curl.
 
-Post a few random votes to the APP using:
+Post a few random votes to the application using:
 
 ```
 for i in {1..20}
