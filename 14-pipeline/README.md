@@ -1,8 +1,12 @@
-# Create an automated CI/CD Pipeline 
+# Getting started with CI/CD
 
-In this lab  you will create a CI/CD Pipeline based on Jenkins.  The Pipeline is run in several stages, first building the app, then deploying the app and then testing the app. 
+In this lab  you will create a CI/CD Pipeline based on Jenkins.  
+The Pipeline is made up of three stages:
+- building the app, then
+- deploying the app and then
+- testing the app. 
 
-If you have not already done do, fetch the source code:
+If you have not already done do, fetch your source code:
 
 ```
 git clone https://github.com/YOUR_GITHUB_USERNAME/flask-vote-app.git
