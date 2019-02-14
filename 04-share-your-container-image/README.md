@@ -105,10 +105,10 @@ Now create a new repository using the Quay web console:
 1. fill in the form, remember to set "Public" access 
 1. choose "Link to a GitHub Repository Push"
 1. Click on "Create public repository" 
-  1. Note "You will be redirected to authorize for GitHub Repository Push once the repository has
+    1. Note "You will be redirected to authorize for GitHub Repository Push once the repository has
 been created"
 1. On the next "Setup Build Trigger" page:
-  1. select the Github organisation. Click "Continue"
+    1. select the Github organisation. Click "Continue"
 1. Select the repository "flask-vote-app"
 1. Click Continue
 1. Leave "Trigger for all branches and tags" as default and
