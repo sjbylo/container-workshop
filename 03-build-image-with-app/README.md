@@ -73,7 +73,11 @@ Launch your container again and using the following command, explore inside your
 
 ```
 docker run -it --rm -p 8080:8080 --name=vote-app flask-vote-app:latest bash
+```
 
+Try some commands:
+
+```
 ps -ef
 ls -l /
 id
