@@ -57,7 +57,7 @@ laptop, you will be able to use git inside the online lab environment.
 
 A) Absolute minimum requirements - access OpenShift via WiFi  
 - A laptop with a modern up-to-date browser
-- Ssh installed, e.g. PuTTY
+- Ssh installed, e.g. PuTTY (for windows) 
 - Wifi 
 - Register for a free github.com account at https://github.com/join 
 - Note: With just this, you can perform all of the OpenShift labs (in the cloud or with Minishift), but not the Docker based labs on your laptop. 

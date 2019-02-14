@@ -4,7 +4,9 @@ In this lab you will download the source code of our example application and get
 
 _Don't worry if you can't complete this lab!!!!_
 
-Note that it is anticipated that you may not succeed to install and run this application directly on your laptop!  This is because you might not have Python installed, you might not have the correct version, you might have conflicting software install/running on your laptop etc etc etc...
+Note that it is anticipated that you may not succeed to install and run this application directly on your laptop!  
+This is because you might not have Python installed, you might not have the correct version of python installed, you might have 
+conflicting software install/running on your laptop etc etc etc... There are many issues that you might face. 
 
 If you have python, pip and git installed on your laptop you can complete this lab. 
 To run the application on your laptop, first download the source code from Github. You can
