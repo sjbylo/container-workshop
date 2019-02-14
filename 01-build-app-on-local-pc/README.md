@@ -72,7 +72,7 @@ The curl command should output HTML containing "<title>Favorite Linux distributi
 
 Close the extra terminal window and quit the application using CTRL+C.
 
-**The is the end of the lab**
+**That's the end of the lab.**
 ---
 
 If you are interested, you can test the application using curl.
