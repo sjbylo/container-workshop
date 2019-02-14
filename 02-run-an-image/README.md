@@ -65,7 +65,8 @@ Let's try and show what a container, running as root, could do if the container 
 
 We will mount the host's root filesystem into the container and write a file to it.
 
-Run the following command to mound the host (yes, your laptop!) system filesystem under /rootfs (-v /:/rootfs).  
+Run the following command to mount the host system's filesystem under /rootfs.   Yes!
+You will mount your laptop's system disk into the container.
 
 ```
 docker run -it --rm -v /:/rootfs centos:7
@@ -89,6 +90,8 @@ Type the following to exit from the running container:
 ```
 exit
 ```
+
+What implications might this have for security if your host system is not properly configured and secured? 
 
 You can read more about this at this blog post: http://blog.dscpl.com.au/2015/12/don-run-as-root-inside-of-docker.html 
 
