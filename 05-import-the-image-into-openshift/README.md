@@ -189,3 +189,7 @@ curl http://$VOTE_APP_ROUTE
 ```
 
 
+**That's the end of the lab.**
+
+---
+

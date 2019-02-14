@@ -109,19 +109,19 @@ already exists).
     1. Note "You will be redirected to authorize for GitHub Repository Push once the repository has
 been created"
 1. On the next "Setup Build Trigger" page:
-    1. select the Github organisation. Click "Continue"
+    1. select the Github organization. Click "Continue"
     1. Select the repository "flask-vote-app"
 1. Click Continue
     1. Leave "Trigger for all branches and tags" as default 
 1. Click Continue 
-    1. Select "/Dockerfile" as the path to dockefile
+    1. Select "/Dockerfile" as the path to the dockerfile
 1. Click on Continue 
     1. Context should be "/"
 1. Click on Continue until it's complete!
 
 You can start the build, either by
 1. clicking on the "_Start New Build_" button or
-1. by commiting your code changes with git.
+1. by committing your code changes with git.
 
 The build should start.
 
@@ -140,7 +140,7 @@ Finally, we can check if others can "pull" and run your image from the following
 echo quay.io/$MY_QUAY_USER/flask-vote-app:latest
 ```
 
-Ask your neighbour to try out the following:
+Ask your neighbor to try out the following:
 
 ```
 docker run -it --rm -p 8080:8080 --name=vote-app quay.io/$MY_QUAY_USER/flask-vote-app:latest
@@ -162,7 +162,7 @@ docker kill vote-app
 ---
 Optionally, you might like to try ...
 
-After your images have been uploded to Quay, check to see if they have been scanned for any
+After your images have been uploaded to Quay, check to see if they have been scanned for any
 vulnerabilities or if they are still in the scanning queue.  If so, what vulnerabilities are found and how
 might you fix them? 
 
