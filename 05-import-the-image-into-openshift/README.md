@@ -1,6 +1,6 @@
 # Import the image into OpenShift from quay.io 
 
-In this lab you will launch a container image into a pod (Kubernetes container) on OpenShift and then access it via an endpoint.
+In this lab you will launch a container image into a pod (Kubernetes container) on OpenShift and then access it via a "route" endpoint.
 
 *NOTE: It should be possible to run these labs on Minishift.  Minishift is OpenShift running on your laptop. You can try to use 
 Minishift if it is working properly.  However, it is recommended to follow these labs using the
@@ -10,6 +10,8 @@ You *cannot* start this lab without access to OpenShift.  Wait for your instruct
 
 After you have the access credentials (host, username and password), access the environment and ensure you are logged into OpenShift. 
 
+# Log in to OpenShift
+
 Use the "whoami" command to determine which user you are using.
 
 ```
@@ -17,13 +19,16 @@ oc whoami
 ```
 You should see your username.
 
-If you are not logged in to OpenShift properly, use the following:
+If you are not logged in to OpenShift, use the following to log in:
 
 ```
 oc login -u YOUR_USERNAME https://master.openshift.example.com/
 <enter your password>
 ```
-(Your instructor, if available, will provide you with the OpenShift URL.).
+(Your instructor will provide you with the OpenShift URL.).
+
+
+# Create a project
 
 First of all, before you can do anything with OpenShift, you need to create a project.  
 A project is a place in OpenShift where you can work and launch your containers without disturbing other 
@@ -69,7 +74,7 @@ OpenShift, e.g. re-build or deploy containers if base images change.
 (Note that if you were able to create your own vote application image in your own quay.io account, you can use yours instead).
 
 ---
-## Now, we will launch the image. 
+## Now, you will fetch and launch the image you created in Quay
 
 Run the following command to initialize the application and launch the container image.
 
@@ -79,8 +84,9 @@ Check what we are doing first! Use --dry-run to check what "oc new-app" will do 
 oc new-app quay.io/YOUR_QUAY_USERNAME/flask-vote-app:latest --name vote-app --dry-run 
 ```
 Remember to replace YOUR_QUAY_USERNAME with your Quay username!
+Also, ensure the image, e.g. "flask-vote-app", exists in Quay!
 
-Have a look at the dry run output.  Does it make sense what it will do? 
+Have a look at the dry run output.  Does it make sense what `oc new-app` will do? 
 
 If all looks well, then execute the command without the dry run: 
 
@@ -88,10 +94,12 @@ If all looks well, then execute the command without the dry run:
 oc new-app quay.io/YOUR_QUAY_USERNAME/flask-vote-app:latest --name vote-app 
 ```
 
-It can take a while to pull the image for the first time, especially if you are running OpenShift on your laptop and downloading over a shared Internet connection.   But, if you already have the centos image layers cached in OpenShift, then the download should be a lot faster. 
+It can take a while to pull the image for the first time, especially if you are running OpenShift on your laptop and 
+downloading over a shared Internet connection.   But, if you already have the centos image layers cached in OpenShift, 
+then the download should be a lot faster. 
 After pulling the image from quay.io, the DeploymentConfig object will automatically launch it into a vote-app pod. 
 
-Check what's happening with the following command.
+Check the status of the launching pod with this command:
 
 ```
 oc get po
@@ -104,6 +112,7 @@ Eventually, you should see the pod running, as show.
 
 Once the pod is up ("Running") and ready ("1/1") you can try and access the application in the pod.
 
+## Create a route
 
 Now, we want to access the application, but there is one problem.  By default, the IP address of the pod is not reachable from networks outside of the OpenShift cluster. 
 To access the vote-app pod, we need to create a way to connect to it from an outside network.  To do this, we create a "route" object.  
@@ -158,38 +167,10 @@ After any changes are made to the image - e.g. you re-build the image on quay.io
 ---
 Optionally, you might like to try ...
 
-See how easy it is to change the application endpoint (route object) to use https instead of http. 
-You can change this in the OpenShift web console, so log in.
+You can have your pod automatically re-deployed after a source code change in a couple of ways.  
 
-Go to your project, then to Applications (left menu), then to Routes, select your route called vote-app, click Actions->Edit and see 
-if you can find the security option and change from http to https?
+1. The easiest would be to make a simple change to the application's code and commit it to your Git Hub repository. 
+If the Quay repository has been properly linked to your Git Hub repository (as in the tasks above) this would trigger a fresh build of the image which would in turn trigger a re-deployment in OpenShift.
+1. Another way, would be to re-build your image on your laptop and then push the changes to Quay.  This would also be detected by OpenShift and the container would be re-deployed.
 
-Failing that, this can also be done on the command line with the following command!
-
-```
-oc patch route vote-app -p '{"spec":{"tls":{"termination":"edge"}}}'
-```
-
-Test https is working using the self-signed certificate that is built into OpenShift.
-
-```
-curl -k https://$VOTE_APP_ROUTE
-```
-
-Remember to switch back from https to http again by removing the `tls` configuration in the route object.
-
-```
-oc patch route vote-app --type json -p '[{ "op": "remove", "path":"/spec/tls"}]'
-```
-
-check that http is working again:
-
-```
-curl http://$VOTE_APP_ROUTE
-```
-
-
-**That's the end of the lab.**
-
----
 

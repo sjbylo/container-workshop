@@ -86,6 +86,8 @@ pulled by all users._".
 ---
 ## Let Quay.io build the image for you and make it publicly available!
 
+*Note that if you managed to successfully push your image to Quay in the previous task using "docker push", then this lab is optional. But you still might like to try it out, especially if it interests you.*
+
 For Quay.io to build the image for you, you need to link Quay with *your* Github source code
 repository.
 
@@ -101,8 +103,8 @@ To do this, go to Quay.io, create a new repository and link it to *your* forked 
 Now create a new repository using the Quay web console:
 
 1. Go to https://quay.io/repository/
-1. Click on "+ Create New Repository" and name it "flask-vote-app" (or a different name if this
-already exists).
+1. Click on "+ Create New Repository" and name it "flask-vote-app" (or a different name if this name
+already exists!).
 1. Fill in the form, remember to set "Public" access 
 1. Choose "Link to a GitHub Repository Push"
 1. Click on "Create public repository" 

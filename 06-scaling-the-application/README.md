@@ -155,3 +155,36 @@ how to scale up/down your application on OpenShift!
 **That's the end of the lab.**
 
 ---
+Optionally, you might like to try ...
+
+See how easy it is to change the application endpoint (route object) to use https instead of http. 
+You can change this in the OpenShift web console, so log in.
+
+Go to your project, then to Applications (left menu), then to Routes, select your route called vote-app, click Actions->Edit and see 
+if you can find the security option and change from http to https?
+
+Failing that, this can also be done on the command line with the following command!
+
+```
+oc patch route vote-app -p '{"spec":{"tls":{"termination":"edge"}}}'
+```
+
+Test https is working using the self-signed certificate that is built into OpenShift.
+
+```
+curl -k https://$VOTE_APP_ROUTE
+```
+
+Remember to switch back from https to http again by removing the `tls` configuration in the route object.
+
+```
+oc patch route vote-app --type json -p '[{ "op": "remove", "path":"/spec/tls"}]'
+```
+
+check that http is working again:
+
+```
+curl http://$VOTE_APP_ROUTE
+```
+
+

@@ -10,9 +10,12 @@ Ensure you are working in the source code directory:
 cd flask-vote-app
 ```
 
+---
+## Create the Pipeline
+
 Now, you need to replace the pipeline with a new one which knows how to promote the application into production.
 
-Recreate the pipeline (oc replace) using the following command:
+Recreate the pipeline (`oc replace`) using the following command:
 
 ```
 oc replace -f openshift/pipeline-full.yaml
@@ -20,6 +23,9 @@ buildconfig.build.openshift.io/vote-app-pipeline created
 ```
 
 Take a look in the OpenShift web console to see the pipeline code.  Go to the Menu on the left under Build->Pipeline->Configuration to see the Jenkins Pipeline code.  There is one more stage added called "Promote to Prod" which waits for input and then promotes (tags) the image into production.
+
+---
+## Set up the application in production
 
 Now you need to set up the application for production.
 
@@ -29,13 +35,14 @@ Tag the application image with "prod" to make it available to deploy into produc
 oc tag vote-app:latest vote-app:prod
 ```
 
-This will create a new tag ("prod") that's pointing to a specific version of the application.  This is the version that will run in production.  
+This will create a new tag ("prod") that's pointing to a specific version of the application.  
+This is the version that will run in production.  
 This provides fine-grained control of what exactly is running in production. Only if the image is "promoted" by 
 tagging it like this, will it run in production. 
 
 Now, with the newly tagged image ("prod"), you can create the production DeploymentConfig which will be responsible for the life cycle of the application in production.
 
-Create the production DeploymentConfig as follows:
+Initialize the production application instance using the image (--image-stream=vote-app:prod) as follows. Note, the name is `vote-app-prod`
 
 ```
 oc new-app --image-stream=vote-app:prod  --name vote-app-prod
@@ -56,6 +63,9 @@ curl $VOTE_APP_ROUTE_PROD
 
 You should see the application working.
 
+---
+## Run the Pipeline
+
 Let's try out the new pipeline.
 
 Now try the following to show how the pipeline works including a manual step to promote (and deploy) to production:
@@ -69,21 +79,8 @@ You can do this using git on the command line or by using the GitHub console by 
 - Check the production version is now running the newer version of the application ("v2").
 
 
-
 **That's the end of the lab**
 
 ---
-If you are interested to try something else, ... FIXME add extra tasks here FIXME
 
 
----
-
-FIXME FIXME
-```
-oc run vote-app-prod --image=docker-registry.default.svc:5000/$(oc project -q)/vote-app
-FIXME FIXME 
-oc export dc vote-app | sed "s/vote-app/vote-app-prod/g" | oc create -f -
-OR
-oc get --export dc vote-app -o yaml | sed "s/vote-app/vote-app-prod/g" | oc create -f -
-```
-FIXME FIXME 

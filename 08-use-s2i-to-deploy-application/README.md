@@ -8,6 +8,34 @@ which does the following:
 1. The image is pushed into the internal registry of OpenShift. 
 1. The container is launched since the DeploymentConfig is configured to launch or re-launch the container if the image is added or updated. 
 
+Important: First, you must create a fresh project to complete this and the following labs.
+
+```
+oc new-project <provide another unique cluster-wide project name>
+```
+After the project has been created, you will be placed into that project.
+
+You can check this using:
+
+```
+oc project
+```
+
+You can list your projects with:
+
+```
+oc projects
+```
+
+You can change to a different project using:
+
+```
+oc project <your project name>
+```
+
+---
+## Launch the application using s2i
+
 "oc new-app" is the command that can initialize an application on OpenShift. 
 This command will use the builder image (python:2.7) and run s2i against the source code, fetched from GitHub. 
 
@@ -27,7 +55,7 @@ You can view the build process in the console and also on the command line, like
 oc logs bc/vote-app --follow 
 ```
 
-Note how the source code is first cloned, the python dependencies are installed and then a new image is committed/pushed into the internal container registry. 
+Note, how the source code is first cloned, the python dependencies are installed and then a new image is committed/pushed into the internal container registry. 
 
 After the build the image will be automatically launched.
 

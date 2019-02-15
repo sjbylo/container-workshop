@@ -20,6 +20,9 @@ As usual, ensure you are working in the source code directory:
 cd flask-vote-app
 ```
 
+---
+## Create your first CI/CD Pipeline
+
 Now, you need to create a new BuildConfig that employs the Jenkins pipeline strategy to build,
 deploy and test our example application.  When we do this, Jenkins will be automatically launched and set up for you.
 
@@ -46,6 +49,9 @@ vote-app            Source            Git       1
 vote-app-pipeline   JenkinsPipeline             0
 ```
 
+---
+## Disable automatic triggers 
+
 There is one more thing we need to do before can use the CI/CD pipeline.  We need to disable automatic deployment when the application 
 image is updated.  This is because we want to give the Jenkins Pipeline control of this process and not OpenShift itself. 
 
@@ -54,6 +60,9 @@ To do this, run this command which removes the "automatic: true" setting in the 
 ```
 oc set triggers dc vote-app --manual
 ```
+
+---
+## Start the Pipeline
 
 Now, you can start the Pipeline!
 
