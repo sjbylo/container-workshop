@@ -1,17 +1,17 @@
 # Further resources
 
-The exercices in this workshop have shown you how OpenShift can be used to deploy and manage your
+The labs in this workshop have shown you how OpenShift can be used to deploy and manage your
 container based applications.
 
 If you have finished this workshop early and want to experiment some more,
-we have additional exercises you can try out using our online interactive
+we have additional labs you can try out using our online interactive
 learning environment.
 
 * *[OpenShift Interactive Learning Portal](https://learn.openshift.com/)* - An online interactive learning environment where you can run
 through various scenarios related to using OpenShift.
 
 The online interactive learning environment is always available so you
-can continue to work on those exercises even after the workshop is over.
+can continue to work on those labs even after the workshop is over.
 
 * *[OpenShift Cookbook](http://cookbook.openshift.org/)* - Recipes of common tasks that users could need to do on OpenShift.
 
