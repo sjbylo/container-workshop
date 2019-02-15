@@ -22,12 +22,12 @@ Probes come in three falvours:
 ## Create a probe
 
 Use the following command to add a probe to the DeploymentCOnfig of our application "dc vote-app". The probe will check if
-the vote.html page returns with a response code of 200 or not and also within 2 seconds or not.  
+the /health page returns with a response code of 200 or not and also within 2 seconds or not.  
 The probe will only start after an initial delay of 3 seconds, giving the application in the container a chance to start up properly. 
 `Liveness` means the probe will check if the container itself is healthy.
 
 ```
-oc set probe dc vote-app --liveness --get-url=http://:8080/vote.html --timeout-seconds=2 --initial-delay-seconds=3
+oc set probe dc vote-app --liveness --get-url=http://:8080/health --timeout-seconds=2 --initial-delay-seconds=3
 DeploymentConfig.apps.openshift.io/vote-app probes updated
 ```
 
@@ -69,12 +69,12 @@ oc get pod -owide | grep vote-app.*Running
 Select one of the pod's IP addresses. And run this command:
 
 ```
-curl 10.1.5.51:8080/shutdown
+curl 10.1.5.51:8080/fail
 ```
 _Don't forget to replace the IP address with the IP address of your selected pod._
 
-This will cause the application inside the container to shutdown and become unresponsive.   After a few seconds, the probe
-for /vote.html will fail and the container will be automatically restarted inside its pod.  
+This will cause the application inside the container to fail and become unresponsive.   After a few seconds, the probe
+for /health will fail and the container will be automatically restarted inside its pod.  
 
 To see this in action, run the following:
 
@@ -88,7 +88,7 @@ following:
 ```
 Started container
 ...
-Liveness probe failed: Get http://10.1.5.51:8080/vote.html: dial tcp 10.1.5.51:8080: connect: connection refused
+Liveness probe failed: Get http://10.1.5.51:8080/health: dial tcp 10.1.5.51:8080: connect: connection refused
 ...
 ```
 
