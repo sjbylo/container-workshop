@@ -66,7 +66,7 @@ A) Absolute minimum requirements - access OpenShift via WiFi
 - Register for a free github.com account at https://github.com/join 
 - A Quay.io account 
     - Register for a free account at https://quay.io/
-    - Generate and retrieve your encrypted password from the Settings menu. We will be using it to interact with the Quay registry. 
+    - Optionally, generate and retrieve your encrypted password from the Settings menu. We will be using it to interact with the Quay registry. 
 - Note: With just this, you can perform all of the OpenShift labs (in the cloud or with Minishift), but not the Docker based labs on your laptop. 
 
 B) Best case - install Docker on your laptop 
