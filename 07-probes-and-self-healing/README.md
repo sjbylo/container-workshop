@@ -33,6 +33,9 @@ DeploymentConfig.apps.openshift.io/vote-app probes updated
 
 Due to this configuration change, the pod will be restarted.
 
+---
+## Test a failing pod
+
 Now, delete one of the pods to simulate pod failure. 
 
 ```
@@ -54,11 +57,10 @@ watch oc get pods
 Hit CTRL-C to exit from the watch command.
 
 
-**That's the end of this lab.**
-
 ---
+## Test a failing application 
 
-If you are interested, you can try another way to fail the application and test the self-healing.
+Try another way to fail the application and test the self-healing.
 
 This command will show the pods and their IP addresses:
 
@@ -66,7 +68,7 @@ This command will show the pods and their IP addresses:
 oc get pod -owide | grep vote-app.*Running 
 ```
 
-Select one of the pod's IP addresses. And run this command:
+Select one of the pod's IP addresses and run this command to cause the applicaton to fail:
 
 ```
 curl 10.1.5.51:8080/fail
@@ -76,20 +78,26 @@ _Don't forget to replace the IP address with the IP address of your selected pod
 This will cause the application inside the container to fail and become unresponsive.   After a few seconds, the probe
 for /health will fail and the container will be automatically restarted inside its pod.  
 
-To see this in action, run the following:
+To see this in action, run the following a few times:
 
 ```
-oc describe  po vote-app-23-m5v74
+oc describe po vote-app-23-m5v74
 ```
 
 You should see output showing the probe failing and the container starting up again, similar to the
 following:
 
 ```
+Liveness probe failed: HTTP probe failed with statuscode: 500
+pulling image ...
+Successfully pulled image ...
+Killing container with id ...
+Created container
 Started container
-...
-Liveness probe failed: Get http://10.1.5.51:8080/health: dial tcp 10.1.5.51:8080: connect: connection refused
-...
 ```
 
+Note that, beacuse the application itself failed, the container was killed and started again inside
+the same pod.
+
+**That's the end of this lab.**
 
