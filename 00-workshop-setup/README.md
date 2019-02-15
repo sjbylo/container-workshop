@@ -1,4 +1,4 @@
-# Setting up for the workshop
+# Getting ready for the workshop
 
 This workshop shows you how to build and use Linux containers on your laptop and then how to run and manage these same container images on OpenShift.
 
@@ -43,7 +43,8 @@ Click on the "Fork" button.
 GitHub will make a copy and you will see your own version of it in your own GitHub account.
 Check that the URL now contains your GitHub username and no longer "sjbylo"!
 Later on in the labs you will be asked to access your repository.  
-To help you get the URL, click on the 'Clone or download" button and copy & paste the URL into your terminal when ask to.
+To help you get the URL, click on the 'Clone or download" button and copy & paste the URL into your
+terminal when asked to.
 
 Your repository's URL will look something like this:
 
@@ -63,6 +64,9 @@ A) Absolute minimum requirements - access OpenShift via WiFi
 - Ssh installed, e.g. PuTTY (for windows) 
 - Wifi 
 - Register for a free github.com account at https://github.com/join 
+- A Quay.io account 
+    - Register for a free account at https://quay.io/
+    - Generate and retrieve your encrypted password from the Settings menu. We will be using it to interact with the Quay registry. 
 - Note: With just this, you can perform all of the OpenShift labs (in the cloud or with Minishift), but not the Docker based labs on your laptop. 
 
 B) Best case - install Docker on your laptop 
@@ -74,8 +78,5 @@ B) Best case - install Docker on your laptop
 - The following command should output "CentOS Linux":
     - docker run -it --rm centos:7 cat /etc/redhat-release
     - CentOS Linux release 7.6.1810 (Core) 
-- A Quay.io account 
-    - Register for a free account at https://quay.io/
-    - Generate and retrieve your encrypted password from the Settings menu. We will be using it to interact with the Quay registry. 
 - Note: With the above, you can perform all of the labs. 
 
