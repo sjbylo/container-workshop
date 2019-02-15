@@ -2,7 +2,8 @@
 
 This workshop shows you how to build and use Linux containers on your laptop and then how to run and manage these same container images on OpenShift.
 
-See below ("What you should do before...") for what you need to configure/install before starting these labs.
+See below ("What you should do before...") for what you need to configure/install before starting
+this workshop.
 
 ## Fetch the container (Docker) images you need for this workshop
 

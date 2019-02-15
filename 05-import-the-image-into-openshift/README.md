@@ -169,8 +169,9 @@ Optionally, you might like to try ...
 
 You can have your pod automatically re-deployed after a source code change in a couple of ways.  
 
-1. The easiest would be to make a simple change to the application's code and commit it to your Git Hub repository. 
-If the Quay repository has been properly linked to your Git Hub repository (as in the tasks above) this would trigger a fresh build of the image which would in turn trigger a re-deployment in OpenShift.
+1. The easiest way would be to make a simple change to the application's code and commit it to your Git Hub repository. 
+If the Quay repository has been properly linked to your Git Hub repository (as in the tasks above)
+this would trigger a fresh build of the image in Quay which would in turn trigger a re-deployment in OpenShift.
 1. Another way, would be to re-build your image on your laptop and then push the changes to Quay.  This would also be detected by OpenShift and the container would be re-deployed.
 
 
