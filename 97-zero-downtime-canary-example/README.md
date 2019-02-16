@@ -1,4 +1,4 @@
-# Zero down time canary deployment example
+# Zero down time canary deployment 
 
 In this lab you will see how OpenShift can help you execute a canary deployment.  The same method
 can also be used for blue-green deployments.
@@ -35,6 +35,7 @@ oc expose dc/prod --port=8080
 ```
 oc get svc
 ```
+You should see a new service object with the name `prod`
 
 Expose the application externally, creating a route:
 
@@ -45,6 +46,7 @@ oc expose svc/prod
 ```
 oc get route 
 ```
+You should see a new route object with the name `prod`
 
 ## Deploy a "new" version of the application
 
@@ -63,16 +65,25 @@ oc set env dc/canary RESPONSE="Hello from Canary"
 ```
 oc expose dc/canary --port=8080
 ```
+You should see a new service object with the name `canary`
 
 Set all traffic to go to the current version, `prod`:
 
 ```
 oc set route-backends prod   
+NAME         KIND     TO    WEIGHT
+routes/prod  Service  prod  100
 ```
+This shows that, by default, 100% of traffic is passed to `prod`.
 
 ```
 oc set route-backends prod prod=100 canary=0
 ```
+Now, this explicitly configures the amount of traffic that should go to `prod` and to `canary`.
+
+Take a look at the web console and you will see a graph showing how the traffic is split (`Traffic
+Split`). 
+
 
 ## Show canary deployment
 
@@ -81,13 +92,30 @@ Now, test the application to show the behavior.
 Fetch the route into a variable you can use later:
 
 ```
-APP_ROUTE=`oc get route prod -o jsonpath='{.spec.host}{"\n"}'`
+APP_ROUTE=`oc get route prod -o jsonpath='{.spec.host}{"\n"}'`; echo $APP_ROUTE
+prod-myproject.apps.xyz.openshiftworkshop.com
 ```
 
 Test the application, showing that all requests are sent to the production version:
 
 ```
-while true; do curl http://$APP_ROUTE/; sleep .2; done
+for i in {0..15}; do curl http://$APP_ROUTE/; sleep .2; done
+Hello from Prod
+Hello from Prod
+Hello from Prod
+Hello from Prod
+Hello from Prod
+Hello from Prod
+Hello from Prod
+Hello from Prod
+Hello from Prod
+Hello from Prod
+Hello from Prod
+Hello from Prod
+Hello from Prod
+Hello from Prod
+Hello from Prod
+Hello from Prod
 ```
 
 Now configure it so that 10% of requests are sent to the canary version of the application:
@@ -95,12 +123,29 @@ Now configure it so that 10% of requests are sent to the canary version of the a
 ```
 oc set route-backends prod prod=90 canary=10
 ```
+Take a look at the web console to see the changes to the graph.
 
 Test the application, showing that 90% of requests are sent to the production version and 10%
 are sent to the canary version:
 
 ```
-while true; do curl http://$APP_ROUTE/; sleep .2; done
+for i in {0..15}; do curl http://$APP_ROUTE/; sleep .2; done
+Hello from Canary
+Hello from Prod
+Hello from Prod
+Hello from Prod
+Hello from Prod
+Hello from Prod
+Hello from Prod
+Hello from Prod
+Hello from Prod
+Hello from Prod
+Hello from Canary
+Hello from Prod
+Hello from Prod
+Hello from Prod
+Hello from Prod
+Hello from Prod
 ```
 
 **That's the end of the lab**
