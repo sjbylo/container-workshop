@@ -1,4 +1,4 @@
-# Zero down time canary deployment 
+# Zero downtime canary deployment 
 
 In this lab you will see how OpenShift can help you execute a canary deployment.  The same method
 can also be used for blue-green deployments.
@@ -153,7 +153,7 @@ Hello from Prod
 
 In case you are interested, try the same again, but this time for a blue-green deployment. 
 
-A Blue-green deployment is a technique that reduces down time and risk by running two identical
+A Blue-green deployment is a technique that reduces downtime and risk by running two identical
 production environments called Blue and Green. At any time, only one of the environments is live,
 with the live environment serving all production traffic.  
 

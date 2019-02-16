@@ -175,4 +175,5 @@ If the Quay repository has been properly linked to your Git Hub repository (as i
 this would trigger a fresh build of the image in Quay which would in turn trigger a re-deployment in OpenShift.
 1. Another way, would be to re-build your image on your laptop and then push the changes to Quay.  This would also be detected by OpenShift and the container would be re-deployed.
 
-
+You can read more about OpenShift and its core concepts here:
+https://docs.openshift.com/container-platform/3.11/architecture/core_concepts/index.html 
