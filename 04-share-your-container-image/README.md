@@ -108,8 +108,10 @@ already exists!).
 1. Fill in the form, remember to set "Public" access 
 1. Choose "Link to a GitHub Repository Push"
 1. Click on "Create public repository" 
-    1. Note "You will be redirected to authorize for GitHub Repository Push once the repository has
-been created"
+    1. You will be redirected to authorize for GitHub Repository Push once the repository has been
+created.
+    1. Note: _If you don't see an expected Git hub organization here?_
+        1. Please visit `Connections with Quay Container Registry` and choose `Grant` or `Request` before reloading this page.
 1. On the next "Setup Build Trigger" page:
     1. select the Github organization. Click "Continue"
     1. Select the repository "flask-vote-app"
