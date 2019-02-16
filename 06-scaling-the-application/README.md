@@ -116,7 +116,7 @@ have been stopped.
 
 At this point the application is idled, the pods are not running and no
 resources are being used by the application. This doesn't mean that the 
-application is deleted. The current state is just saved.. that’s all.
+application is deleted.  The current state is just saved, that's all.
 
 
 ---
