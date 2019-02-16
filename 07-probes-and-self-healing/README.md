@@ -99,5 +99,5 @@ Started container
 Note that, beacuse the application itself failed, the container was killed and started again inside
 the same pod.
 
-**That's the end of this lab.**
+**That's the end of the lab**
 
