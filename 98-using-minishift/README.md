@@ -18,6 +18,7 @@ Import the images into Minishift with the following commands:
 ```
 docker load -i centos7.saved
 Loaded image: centos:7
+```
 
 ```
 docker load -i mysql57.saved
