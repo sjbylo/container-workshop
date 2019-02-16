@@ -46,6 +46,8 @@ oc expose svc/prod
 oc get route 
 ```
 
+## Deploy a "new" version of the application
+
 Now, add a new version of the application, called `canary`:
 
 ```
