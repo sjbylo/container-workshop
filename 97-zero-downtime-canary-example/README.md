@@ -90,13 +90,13 @@ Test the application, showing that all requests are sent to the production versi
 while true; do curl http://$APP_ROUTE/; sleep .2; done
 ```
 
-Now configure so that 10% of requests are sent to the canary version of the application:
+Now configure it so that 10% of requests are sent to the canary version of the application:
 
 ```
 oc set route-backends prod prod=90 canary=10
 ```
 
-Test the application, showing that 90% of requests are sent to the production version and about 10%
+Test the application, showing that 90% of requests are sent to the production version and 10%
 are sent to the canary version:
 
 ```
