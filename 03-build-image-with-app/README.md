@@ -82,7 +82,7 @@ Launch your container again and using the following command, explore inside your
 using various Linux commands:
 
 ```
-docker run -it --rm -p 8080:8080 --name=vote-app flask-vote-app:latest bash
+docker run -it --rm --name=vote-app flask-vote-app:latest bash
 ```
 
 Try some commands:
@@ -101,5 +101,6 @@ Don't forget to remove your running container again:
 
 ```
 docker kill vote-app 
+docker rm vote-app 
 ```
 

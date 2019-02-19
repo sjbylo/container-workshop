@@ -17,7 +17,9 @@ download the source code from the command line like this or use whatever git sof
 ```
 git clone https://github.com/ENTER_YOUR_GITHUB_USERNAME_HERE/flask-vote-app.git
 ```
-Especially if you see the error message "Repository not found", don't forget to replace ENTER_YOUR_GITHUB_USERNAME_HERE with your username!
+`Ensure you have already forked the repository as described in the previous labs.`
+
+If you see the error message "Repository not found", don't forget to replace ENTER_YOUR_GITHUB_USERNAME_HERE with your username!
 
 If you still see the same error message, ensure you have forked the example application repository before you continue.
 
@@ -70,12 +72,14 @@ curl http://localhost:8080/
 
 The curl command should output HTML containing "<title>Favorite Linux distribution</title>". 
 
-Close the extra terminal window and quit the application using CTRL+C.
+Close the extra terminal window and `don't forget to quit the application using CTRL+C.`
 
 **That's the end of the lab.**
+
+Workshop contents: https://github.com/sjbylo/container-workshop
 ---
 
-If you are interested, you can test the application using curl.
+If you are interested, you can test the application by 'posting' come random votes using curl.
 
 Post a few random votes to the application using:
 
@@ -92,6 +96,5 @@ To view the results use the following command. You should see the totals of all 
 ```
 curl -s http://localhost:8080/results.html | grep "data: \["
   data: [ "3",  "3",  "2",  "0",  "1",  "5",  "1",  "3",  "2", ],
-
 ```
 
