@@ -74,7 +74,7 @@ OpenShift, e.g. re-build or deploy containers if base images change.
 (Note that if you were able to create your own vote application image in your own quay.io account, you can use yours instead).
 
 ---
-## Now, you will fetch and launch the image you created in Quay
+## Fetch and launch the image from Quay
 
 Run the following command to initialize the application and launch the container image.
 
@@ -107,7 +107,7 @@ NAME               READY     STATUS    RESTARTS   AGE
 vote-app-1-xgl7c   1/1       Running   0          7m
 ```
 
-Eventually, you should see the pod running, as show.
+Eventually, you should see the pod running, as shown.
 
 
 Once the pod is up ("Running") and ready ("1/1") you can try and access the application in the pod.
