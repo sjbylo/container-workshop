@@ -9,16 +9,15 @@ see below ("What you should do before...").
 ---
 ## Fork the example application repository in GitHub
 
-If not already, you need to fork (copy) the example application repository.  
-Log into your own GitHub account (or create one), then go to the example repository located here:
+In some labs you are asked to make changes to the example application's source code. It is important you use your
+`own copy of the Git Hub repository`. 
 
-https://github.com/sjbylo/flask-vote-app 
+If not already, fork (copy) the example application repository so that you can make
+source code changes.
 
-Notice that the example application belongs to GitHub user "sjbylo".  Because you will be required to make 
-changes to the source code, it is important you *do not* use this repository directly, but that 
-you _fork_ (copy) it and work with your own copy.
-
-Click on the "Fork" button.
+1. Log into your own GitHub account (or create one) then
+1. go to the example repository located here: https://github.com/sjbylo/flask-vote-app 
+1. Click on the "Fork" button on the top right of the page. (Note, only work from "sjbylo").
 
 GitHub will make a copy and you will see your own version of it in your own GitHub account.
 Check that the URL now contains your GitHub username and no longer "sjbylo"!
@@ -29,34 +28,20 @@ terminal when asked to.
 Your repository's URL will look something like this:
 
 ```
-https://github.com/ENTER_ENTER_YOUR_GITHUB_USERNAME_HERE_HERE/flask-vote-app.git
+https://github.com/ENTER_YOUR_GITHUB_USERNAME_HERE_HERE/flask-vote-app.git
 ```
+`In the labs, always remember to enter your own Git Hub username.`
 
 Later on in the labs, you will be asked to clone your source code using git. 
 Don't worry if you don't have git installed on your laptop, you can use git inside the online lab environment.
 
 
-## Optional: Fetch the container (Docker) images you need for this workshop
+## Use Docker on the provded server or on your laptop
 
-Follow this section if:
-1. you have Docker installed and working on your laptop AND
-1. you have not yet pulled the needed images as described in the section below.
+`You should only use Docker running on your laptop... if you have already pulled the needed image.`
 
-Get the image files from your instructor.  Copy
-See below instructions "What you should do before...".
-
-Alternatively, if pulling the images is not possible for any reason, the instructor will provide you with the needed image files
-which you can copy onto your laptop and then load into Docker as follows:
-
-```
-docker load -i centos7.saved
-Loaded image: centos:7
-```
-
-```
-docker load -i mysql57.saved
-Loaded image: mysql:5.7.15
-```
+Otherwise, please use the server provided.  See the "Workshop notes" document, provided by the
+trainer. 
 
 ---
 ## What you should do before following all of the hands-on labs.

@@ -1,5 +1,8 @@
 # Run a docker image
 
+`If you are using docker on your laptop, please continue.  If you are using the server, please
+first ensure you have logged into the server following the instructions provided by the trainer.`
+
 In this lab you will launch a Docker container image. 
 
 First of all check that Docker is running by listing all running containers. 
