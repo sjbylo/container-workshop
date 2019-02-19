@@ -165,6 +165,8 @@ After any changes are made to the image - e.g. you re-build the image on quay.io
 
 **That's the end of the lab.**
 
+Workshop contents: https://github.com/sjbylo/container-workshop
+
 ---
 Optionally, you might like to try ...
 

@@ -101,3 +101,5 @@ the same pod.
 
 **That's the end of the lab**
 
+Workshop contents: https://github.com/sjbylo/container-workshop
+

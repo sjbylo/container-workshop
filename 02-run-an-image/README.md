@@ -62,6 +62,8 @@ https://www.redhat.com/en/blog/containers-are-linux
 
 **That's the end of the lab.**
 
+Workshop contents: https://github.com/sjbylo/container-workshop
+
 Something you might like to try if you have time ...
 
 Let's try and show what a container, running as root, could do if the container might be misconfigured by mistake.

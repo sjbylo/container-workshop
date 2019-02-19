@@ -149,6 +149,9 @@ Hello from Prod
 ```
 
 **That's the end of the lab**
+
+Workshop contents: https://github.com/sjbylo/container-workshop
+
 ---
 
 In case you are interested, try the same again, but this time for a blue-green deployment. 

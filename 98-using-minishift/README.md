@@ -27,3 +27,4 @@ Loaded image: mysql:5.7.15
 
 Now, Minishift will not need to pull those images from docker.io because they will already be available
 within Minishift. 
+

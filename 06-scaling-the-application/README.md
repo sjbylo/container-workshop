@@ -154,6 +154,8 @@ how to scale up/down your application on OpenShift!
 
 **That's the end of the lab.**
 
+Workshop contents: https://github.com/sjbylo/container-workshop
+
 ---
 Optionally, you might like to try ...
 

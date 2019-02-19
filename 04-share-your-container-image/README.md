@@ -163,6 +163,8 @@ docker kill vote-app
 
 **That's the end of the lab.**
 
+Workshop contents: https://github.com/sjbylo/container-workshop
+
 ---
 Optionally, you might like to try ...
 

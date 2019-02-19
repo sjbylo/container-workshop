@@ -81,6 +81,8 @@ You can do this using git on the command line or by using the GitHub console by 
 
 **That's the end of the lab**
 
+Workshop contents: https://github.com/sjbylo/container-workshop
+
 ---
 
 
