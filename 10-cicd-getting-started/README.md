@@ -10,9 +10,9 @@ The Pipeline is made up of three stages:
 If you have not already done do, fetch your source code:
 
 ```
-git clone https://github.com/YOUR_GITHUB_USERNAME/flask-vote-app.git
+git clone https://github.com/ENTER_YOUR_GITHUB_USERNAME_HERE/flask-vote-app.git
 ```
-(don't forget to replace "YOUR_GITHUB_USERNAME" with your real GitHub username!)
+(don't forget to replace "ENTER_YOUR_GITHUB_USERNAME_HERE" with your real GitHub username!)
 
 As usual, ensure you are working in the source code directory:
 

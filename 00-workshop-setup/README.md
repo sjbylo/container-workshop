@@ -1,15 +1,49 @@
 # Getting ready for the workshop
 
-This workshop shows you how to build and use Linux containers on your laptop and then how to run and manage these same container images on OpenShift.
+This workshop shows you how to build and use Linux containers and then how to run and manage these 
+same container images on OpenShift.
 
-See below ("What you should do before...") for what you need to configure/install before starting
-this workshop.
+You should have already installed and configured the prerequisite software.  If you have not, please
+see below ("What you should do before...").
 
-## Fetch the container (Docker) images you need for this workshop
+---
+## Fork the example application repository in GitHub
 
-Ensure Docker is installed and running on your laptop.  See below instructions "What you should do before...".
+If not already, you need to fork (copy) the example application repository.  
+Log into your own GitHub account (or create one), then go to the example repository located here:
 
-If you have not done so already, pull the needed image as described below.
+https://github.com/sjbylo/flask-vote-app 
+
+Notice that the example application belongs to GitHub user "sjbylo".  Because you will be required to make 
+changes to the source code, it is important you *do not* use this repository directly, but that 
+you _fork_ (copy) it and work with your own copy.
+
+Click on the "Fork" button.
+
+GitHub will make a copy and you will see your own version of it in your own GitHub account.
+Check that the URL now contains your GitHub username and no longer "sjbylo"!
+Later on in the labs you will be asked to access your repository.  
+To help you get the URL, click on the 'Clone or download" button and copy & paste the URL into your
+terminal when asked to.
+
+Your repository's URL will look something like this:
+
+```
+https://github.com/ENTER_ENTER_YOUR_GITHUB_USERNAME_HERE_HERE/flask-vote-app.git
+```
+
+Later on in the labs, you will be asked to clone your source code using git. 
+Don't worry if you don't have git installed on your laptop, you can use git inside the online lab environment.
+
+
+## Optional: Fetch the container (Docker) images you need for this workshop
+
+Follow this section if:
+1. you have Docker installed and working on your laptop AND
+1. you have not yet pulled the needed images as described in the section below.
+
+Get the image files from your instructor.  Copy
+See below instructions "What you should do before...".
 
 Alternatively, if pulling the images is not possible for any reason, the instructor will provide you with the needed image files
 which you can copy onto your laptop and then load into Docker as follows:
@@ -24,52 +58,18 @@ docker load -i mysql57.saved
 Loaded image: mysql:5.7.15
 ```
 
-
----
-## Fork the example application repository in GitHub
-
-First you need to fork the example application repository.  
-Log into your own GitHub account (or create one), then go to the example repository located here:
-
-```
-https://github.com/sjbylo/flask-vote-app 
-```
-
-Notice that the example application belongs to GitHub user "sjbylo".  Because you will be required to make changes to the source code, 
-it is important you *do not* use this repository directly, but that you _fork_ (copy) it and work with your own copy.
-
-Click on the "Fork" button.
-
-GitHub will make a copy and you will see your own version of it in your own GitHub account.
-Check that the URL now contains your GitHub username and no longer "sjbylo"!
-Later on in the labs you will be asked to access your repository.  
-To help you get the URL, click on the 'Clone or download" button and copy & paste the URL into your
-terminal when asked to.
-
-Your repository's URL will look something like this:
-
-```
-https://github.com/YOUR_GITHUB_USERNAME/flask-vote-app.git
-```
-
-Later on in the labs, you will be asked to clone your source code.  Don't worry if you don't have git installed on your 
-laptop, you will be able to use git inside the online lab environment.
-
-
 ---
 ## What you should do before following all of the hands-on labs.
 
-A) Absolute minimum requirements - access OpenShift via WiFi  
+A) Absolute minimum requirements - access Docker & OpenShift via WiFi  
 - A laptop with a modern up-to-date browser
 - Ssh installed, e.g. PuTTY (for windows) 
 - Wifi 
 - Register for a free github.com account at https://github.com/join 
 - A Quay.io account 
     - Register for a free account at https://quay.io/
-    - Optionally, generate and retrieve your encrypted password from the Settings menu. We will be using it to interact with the Quay registry. 
-- Note: With just this, you can perform all of the OpenShift labs (in the cloud or with Minishift), but not the Docker based labs on your laptop. 
 
-B) Best case - install Docker on your laptop 
+B) For the adventurous - install Docker on your laptop 
 - A laptop which can run Docker 
     - Docker for Windows or Docker for Mac (or on Linux!) installed and working on the laptop 
 - It will be very helpful if the following commands complete successfully before coming to the workshop:
@@ -78,5 +78,4 @@ B) Best case - install Docker on your laptop
 - The following command should output "CentOS Linux":
     - docker run -it --rm centos:7 cat /etc/redhat-release
     - CentOS Linux release 7.6.1810 (Core) 
-- Note: With the above, you can perform all of the labs. 
 

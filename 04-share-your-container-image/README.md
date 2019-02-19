@@ -48,11 +48,11 @@ Check that your image has been tagged properly.  You should see your images list
 ```
 docker images | grep vote
 flask-vote-app                                    latest              a1e10cb408e6        19 hours ago        349 MB
-quay.io/YOUR_GITHUB_USERNAME/flask-vote-app       latest              a1e10cb408e6        19 hours ago        349 MB
+quay.io/ENTER_YOUR_GITHUB_USERNAME_HERE/flask-vote-app       latest              a1e10cb408e6        19 hours ago        349 MB
 ```
 
 Notice that the image IDs (3rd column) are the same.  That's because we have created only one image but with two different tags. 
-(Note, instead of _YOUR_GITHUB_USERNAME_ you should see your own username, of course!).
+(Note, instead of _ENTER_YOUR_GITHUB_USERNAME_HERE_ you should see your own username, of course!).
 
 ---
 ## Push the image into the registry
@@ -95,7 +95,7 @@ Create a repository in Quay.io using a GitHub repository URL _as the source_.  I
 create one and then use the following repository (your source code).  Link this repository with quay.io.
 
 ```
-https://github.com/YOUR_GITHUB_USERNAME/flask-vote-app.git
+https://github.com/ENTER_YOUR_GITHUB_USERNAME_HERE/flask-vote-app.git
 ```
 
 To do this, go to Quay.io, create a new repository and link it to *your* forked repository in GitHub. 

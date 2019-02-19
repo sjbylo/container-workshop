@@ -42,7 +42,7 @@ This command will use the builder image (python:2.7) and run s2i against the sou
 Run the following command to set up s2i for our application.  "oc new-app" is the command that can initialize an application on OpenShift. 
 
 ```
-oc new-app python:2.7~https://github.com/YOUR_GITHUB_USERNAME/flask-vote-app.git --name vote-app
+oc new-app python:2.7~https://github.com/ENTER_YOUR_GITHUB_USERNAME_HERE/flask-vote-app.git --name vote-app
 ```
 
 This command will create a build object called a BuildConfiguration (BC).  The BuildConfiguration knows where to fetch the builder image 

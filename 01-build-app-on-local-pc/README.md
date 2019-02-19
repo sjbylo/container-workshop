@@ -15,9 +15,9 @@ To run the application on your laptop, first download the source code from GitHu
 download the source code from the command line like this or use whatever git software you are used to.
 
 ```
-git clone https://github.com/YOUR_GITHUB_USERNAME/flask-vote-app.git
+git clone https://github.com/ENTER_YOUR_GITHUB_USERNAME_HERE/flask-vote-app.git
 ```
-Especially if you see the error message "Repository not found", don't forget to replace YOUR_GITHUB_USERNAME with your username!
+Especially if you see the error message "Repository not found", don't forget to replace ENTER_YOUR_GITHUB_USERNAME_HERE with your username!
 
 If you still see the same error message, ensure you have forked the example application repository before you continue.
 
