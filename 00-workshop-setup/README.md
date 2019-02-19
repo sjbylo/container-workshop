@@ -36,15 +36,18 @@ Later on in the labs, you will be asked to clone your source code using git.
 Don't worry if you don't have git installed on your laptop, you can use git inside the online lab environment.
 
 
-## Use Docker on the provded server or on your laptop
+## Use Docker on the provided server or on your laptop
 
-`You should only use Docker running on your laptop... if you have already pulled the needed image.`
+`You should only use Docker running on your laptop... if you have already pulled the needed image,
+as described below`
 
-Otherwise, please use the server provided.  See the "Workshop notes" document, provided by the
+Otherwise, please use the `server provided`.  See the "Workshop notes" document, provided by the
 trainer. 
 
 ---
 ## What you should do before following all of the hands-on labs.
+
+You should have already completes these steps before coming to the workshop.
 
 A) Absolute minimum requirements - access Docker & OpenShift via WiFi  
 - A laptop with a modern up-to-date browser
