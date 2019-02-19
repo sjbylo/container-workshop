@@ -156,7 +156,7 @@ You learned how to build and deploy (and re-build and re-deploy) the application
 
 Workshop contents: https://github.com/sjbylo/container-workshop
 
-
-If you want to try something else try to do all of the above tasks from within the OpenShift console. 
+---
+Optionally, you might like to try to do all of the above tasks from within the OpenShift console. 
 
 

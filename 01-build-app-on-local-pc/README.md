@@ -80,7 +80,7 @@ Workshop contents: https://github.com/sjbylo/container-workshop
 
 ---
 
-If you are interested, you can test the application by 'posting' come random votes using curl.
+Optionally, you might like to try ...  testing the application by 'posting' come random votes using curl.
 
 Post a few random votes to the application using:
 

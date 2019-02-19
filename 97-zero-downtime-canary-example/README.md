@@ -153,6 +153,7 @@ Hello from Prod
 Workshop contents: https://github.com/sjbylo/container-workshop
 
 ---
+Optionally, you might like to try ...
 
 In case you are interested, try the same again, but this time for a blue-green deployment. 
 

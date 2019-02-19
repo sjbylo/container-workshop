@@ -78,6 +78,7 @@ docker kill vote-app
 
 Workshop contents: https://github.com/sjbylo/container-workshop
 
+---
 Optionally, you might like to try ...
 
 Launch your container again and using the following command, explore inside your running container 

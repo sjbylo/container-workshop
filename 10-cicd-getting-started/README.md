@@ -82,6 +82,9 @@ oc start-build vote-app-pipeline
 
 Workshop contents: https://github.com/sjbylo/container-workshop
 
+---
+Optionally, you might like to try ...
+
 If you are interested to try something else, take a look at the below tutorial.  Add a final stage, after the "Test" stage, which 
 scales the application pods to 3.  You can edit the Jenkinsfile directly in the web console. Don't forget to make a backup 
 (cut and paste into a file) of the Jenkinsfile before making any changes!
