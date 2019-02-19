@@ -74,9 +74,9 @@ The curl command should output HTML containing "<title>Favorite Linux distributi
 
 Close the extra terminal window and `don't forget to quit the application using CTRL+C.`
 
-Workshop contents: https://github.com/sjbylo/container-workshop
-
 **That's the end of the lab.**
+
+Workshop contents: https://github.com/sjbylo/container-workshop
 
 ---
 
