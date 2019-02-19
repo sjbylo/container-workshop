@@ -141,7 +141,7 @@ oc rollout undo dc vote-app
 or you can roll back to a specific revision:
 
 ```
-oc rollout undo dc vote-app --to-revision=1
+oc rollout undo dc vote-app --to-revision=2
 ```
 
 Check which version of the application is actually running each time with the browser and with the following command:

@@ -46,12 +46,12 @@ The command will:
 
 Similar to a previous lab, you should see the python application starting up and then listening on port 8080.
 
-IMPORTANT: If you are using Docker on your laptop, use this command (with the option "-p 8080:8080"):
+`IMPORTANT`: If you are using Docker on your laptop, use this command (with the option "-p 8080:8080"):
 ```
 docker run -it --rm -p 8080:8080 --name=vote-app flask-vote-app:latest
 ```
 
-IMPORTANT: If you are using Docker on the server, use this command (without the "-p" option):
+`IMPORTANT`: If you are using Docker on the server, use this command (without the "-p" option):
 ```
 docker run -it --rm --name=vote-app flask-vote-app:latest
 ```
@@ -73,6 +73,7 @@ Using another terminal, stop your running container.
 ```
 docker kill vote-app 
 ```
+or hit CTRL-C.
 
 **That's the end of the lab.**
 
