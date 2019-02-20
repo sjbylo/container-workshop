@@ -22,10 +22,11 @@ You should see your username.
 If you are not logged in to OpenShift, use the following to log in:
 
 ```
-oc login -u YOUR_USERNAME https://master.openshift.example.com/
+oc login -u YOUR_USERNAME https://ENTER_THE_OPENSHIFT_HOSTNAME_HERE/
 <enter your password>
 ```
-(Your instructor will provide you with the OpenShift URL.).
+`Your instructor will provide you with the OpenShift hostname in the shared workshop notes
+document.`
 
 
 # Create a project
@@ -51,6 +52,13 @@ You can check which projects you have access to with the following command:
 ```
 oc projects
 ```
+
+You can delete one of your projects and start again with the following command:
+
+```
+oc delete project <enter project name here>
+```
+
 
 One of the main design points of OpenShift was to make it really easy to bring source code to the platform and get it running. 
 
@@ -81,9 +89,9 @@ Run the following command to initialize the application and launch the container
 Check what we are doing first! Use --dry-run to check what "oc new-app" will do but without executing anything:
 
 ```
-oc new-app quay.io/YOUR_QUAY_USERNAME/flask-vote-app:latest --name vote-app --dry-run 
+oc new-app quay.io/ENTER_YOUR_QUAY_USERNAME_HERE/flask-vote-app:latest --name vote-app --dry-run 
 ```
-Remember to replace YOUR_QUAY_USERNAME with your Quay username!
+Remember to replace ENTER_YOUR_QUAY_USERNAME_HERE with your Quay username!
 Also, ensure the image, e.g. "flask-vote-app", exists in Quay!
 
 Have a look at the dry run output.  Does it make sense what `oc new-app` will do? 
@@ -91,7 +99,7 @@ Have a look at the dry run output.  Does it make sense what `oc new-app` will do
 If all looks well, then execute the command without the dry run: 
 
 ```
-oc new-app quay.io/YOUR_QUAY_USERNAME/flask-vote-app:latest --name vote-app 
+oc new-app quay.io/ENTER_YOUR_QUAY_USERNAME_HERE/flask-vote-app:latest --name vote-app 
 ```
 
 It can take a while to pull the image for the first time, especially if you are running OpenShift on your laptop and 
@@ -157,8 +165,8 @@ We will also mark the image stream object to be refreshed periodically (--schedu
 any changes to the image in Quay.io will trigger an application refresh in OpenShift:
 
 ```
-oc tag quay.io/YOUR_QUAY_USERNAME/flask-vote-app:latest vote-app:latest --scheduled=true
-Tag vote-app:latest set to import quay.io/YOUR_QUAY_USERNAME/flask-vote-app:latest periodically
+oc tag quay.io/ENTER_YOUR_QUAY_USERNAME_HERE/flask-vote-app:latest vote-app:latest --scheduled=true
+Tag vote-app:latest set to import quay.io/ENTER_YOUR_QUAY_USERNAME_HERE/flask-vote-app:latest periodically
 ```
 
 After any changes are made to the image - e.g. you re-build the image on quay.io - the pod will be re-deployed in OpenShift (after a few minutes). 

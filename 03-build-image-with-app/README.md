@@ -57,7 +57,8 @@ docker run -it --rm --name=vote-app flask-vote-app:latest
 ```
 
 Note, at this time you cannot test the application in a container `on the server` as "port bindings are
-not yet supported by rootless containers", but you can see if it starts up.
+not yet supported by rootless containers", but you can see if the application starts up properly or
+not.
 
 As in the previous labs, test your application - but this time it's running in a container!
 
