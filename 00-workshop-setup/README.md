@@ -5,8 +5,7 @@ same container images on OpenShift.
 
 ## Fork the example application repository in GitHub
 
-In some labs you are asked to make changes to the example application's source code. It is important you use your
-`own copy of the Git Hub repository`. 
+In some labs you are asked to make changes to the example application's source code. It is important you use your `own copy of the GitHub repository.`
 
 If not already, fork (copy) the example application repository so that you can make
 source code changes.
@@ -25,9 +24,9 @@ terminal when asked to.
 Your repository's URL will look something like this:
 
 ```
-https://github.com/ENTER_YOUR_GITHUB_USERNAME_HERE_HERE/flask-vote-app.git
+https://github.com/ENTER_YOUR_GITHUB_USERNAME_HERE/flask-vote-app.git
 ```
-`In the labs, always remember to enter your own Git Hub username.`
+`In the labs, always remember to enter your own GitHub username.`
 
 Later on in the labs, you will be asked to clone your source code using git. 
 Don't worry if you don't have git installed on your laptop, you can use git inside the online lab environment.
@@ -44,12 +43,12 @@ your trainer.
 ---
 ## What you should do before starting the workshop!
 
-You should have already completed these steps before coming to the workshop.
+Complete these steps before you start.
 
 A) Absolute minimum requirements - access Docker & OpenShift via WiFi  
 - A laptop with a modern up-to-date browser
 - Ssh installed, e.g. PuTTY (for windows) 
-- Wifi 
+- Wifi or other method to access the Internet
 - Register for a free github.com account at https://github.com/join 
 - Register for a free quay account at https://quay.io/
 
