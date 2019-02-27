@@ -1,5 +1,12 @@
 # Useful commands
 
+# Update
+
+dnf -y update 
+
+# Install oc 
+dnf -y install origin-clients podman git
+
 # Set the OCP API hostname (master)
 MASTER_SVR=https://master.yangon-002b.openshiftworkshop.com
 
@@ -23,6 +30,4 @@ for i in {0..199}; do echo user$i; userdel -r user$i || break; done
 sed -i "s/^PasswordAuthentication/#PasswordAuthentication/g"  /etc/ssh/sshd_config
 systemctl restart sshd
 
-# Install oc 
-$ sudo dnf install origin-clients docker
 

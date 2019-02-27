@@ -42,7 +42,7 @@ Otherwise, please use the `server provided`.  See the "Workshop notes" document,
 your trainer. 
 
 ---
-## What you should do before following coming to the workshop!
+## What you should do before starting the workshop!
 
 You should have already completed these steps before coming to the workshop.
 
