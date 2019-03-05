@@ -81,7 +81,7 @@ Now, run this command once to cause the application to fail:
 curl $VOTE_APP_ROUTE/fail
 ```
 
-To see the affect, run the following:
+To see what's happening, run the following:
 
 ```
 watch "oc describe po vote-app-23-m5v74 | tail -15"
