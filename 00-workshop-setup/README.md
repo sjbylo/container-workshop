@@ -69,3 +69,5 @@ docker pull docker.io/library/mysql:5.7.25
 docker run -it --rm centos:7 cat /etc/redhat-release
 ```
 
+Workshop contents: https://github.com/sjbylo/container-workshop
+
