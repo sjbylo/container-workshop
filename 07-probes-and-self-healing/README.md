@@ -99,9 +99,9 @@ Created container
 Started container
 ```
 
-Notice that after the HTTP probe detected the failure Kubernetes killed the failing container and
+Notice that after the HTTP probe detected the failure, Kubernetes killed the failing container and
 started a fresh container inside the same pod. Note that the pod ID remains the same as it was. 
-This is only possible because a probe was used to properly detect the failure.
+This was only possible because a probe was used to properly detect the failure.
 
 Had there been no probe defined to properly detect the failure the container would
 never be re-started because Kubernetes would always see a running process but not detect any
