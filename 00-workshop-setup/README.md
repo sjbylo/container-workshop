@@ -55,7 +55,7 @@ A) Absolute minimum requirements - access Docker & OpenShift via WiFi
 
 B) For the adventurous - install Docker on your laptop 
 - A laptop which can run Docker 
-    - Docker for (Windows or Docker)[https://docs.docker.com/docker-for-windows/] for Mac (or on Linux!) installed and working on the laptop 
+    - [Docker for Windows][https://docs.docker.com/docker-for-windows/] or Docker for Mac (or on Linux!) installed and working on the laptop 
 - You must complete the following commands successfully before coming to the workshop:
 
 ```
