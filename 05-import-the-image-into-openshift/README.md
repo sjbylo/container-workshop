@@ -53,11 +53,12 @@ You can check which projects you have access to with the following command:
 oc projects
 ```
 
-You can delete one of your projects and start again with the following command:
+Just so you know how, you could delete a project with all of its contents and start again with the following command:
 
 ```
 oc delete project <enter project name here>
 ```
+Note: Do not delete the project you just created! 
 
 
 One of the main design points of OpenShift was to make it really easy to bring source code to the platform and get it running. 
@@ -155,7 +156,11 @@ curl $VOTE_APP_ROUTE
 
 Again, you should see the HTML output containing "`<title>Favourite Linux distribution</title>`". 
 
-Try it out in a browser.  You should see the working voting application.
+Try it out in a browser.  You should see the working voting application.  Run this command to see
+the URL to use:
+```
+echo $VOTE_APP_ROUTE
+```
 
 
 ---

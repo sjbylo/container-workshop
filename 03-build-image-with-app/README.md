@@ -46,19 +46,12 @@ The command will:
 
 Similar to a previous lab, you should see the python application starting up and then listening on port 8080.
 
-`IMPORTANT`: If you are using Docker on your laptop, use this command (with the option "-p 8080:8080"):
 ```
 docker run -it --rm -p 8080:8080 --name=vote-app flask-vote-app:latest
 ```
-
-`IMPORTANT`: If you are using Docker on the server, use this command (without the "-p" option):
-```
-docker run -it --rm --name=vote-app flask-vote-app:latest
-```
-
-Note, at this time you cannot test the application in a container `on the server` as "port bindings are
-not yet supported by rootless containers", but you can see if the application starts up properly or
-not.
+Warning: if you see the error `port bindings are not yet supported by rootless containers`, you
+should leave out the option "-p 8080:8080" and try again. In this case, you are limited to checking if the
+application starts up properly but you cannot reach the application via HTTP to test it. 
 
 As in the previous labs, test your application - but this time it's running in a container!
 
@@ -66,8 +59,8 @@ As in the previous labs, test your application - but this time it's running in a
 curl http://localhost:8080/
 ```
 
-The curl command should output HTML which should contain "<title>Favourite Linux distribution</title>". 
-If you don't have curl, open the URL in a browser.
+The curl command should output HTML containing "<title>Favourite Linux distribution</title>". 
+If you don't have curl, open the above URL in a browser.
 
 Using another terminal, stop your running container.
 
