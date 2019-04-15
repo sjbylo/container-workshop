@@ -39,7 +39,7 @@ Important: You should only use Docker running on your laptop if you have already
 (centos and mysql) onto your laptop, as described below.
 
 Otherwise, please use the `server provided`.  See the "Workshop notes" document, shown to you by
-your trainer. 
+your trainer for information about how to access it. 
 
 ---
 ## What you should do before starting the workshop!
